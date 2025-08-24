@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Insurance | ICICI Lombard</title>
+
+  <link rel="shortcut icon" href="./public/assets/images/icici1.png">
+ 
+
+  <!-- Custom CSS -->
+   <link rel="stylesheet" href="./public/assets/css/slick.css">
+   <link rel="stylesheet" href="./public/assets/css/slick-theme.css">
+   
+   
+        <link rel="stylesheet" href="./public/assets/css/style.css">
+        <link rel="stylesheet" href="./public/assets/css/menu.css">
+        <link rel="stylesheet" href="./public/assets/css/custom.css">
+
+  <link rel="stylesheet" href="./public/assets/css/style.css" />
+  <link rel="stylesheet" href="./public/assets/css/jquery-confirm.min.css" />
+  <link rel="stylesheet" href="./public/assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./public/assets/css/style-slider.css" />
+  <link rel="stylesheet" href="./public/assets/css/core.css" />
+  <link rel="stylesheet" href="./public/assets/css/theme-default.css" />
+
+    <!-- Start Slider CSS-->
+    <link rel="stylesheet" href="./public/assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./public/assets/css/style-slider.css" />
+    <!-- End Slider CSS-->
+
+  <!-- Scripts -->
+   
+<script type="module"  src="./public/assets/js/helpers.js" defer></script>
+<script type="module"  src="./public/assets/js/slick.min.js" defer></script>
+<script type="module"  src="./public/assets/js/jquery-confirm.min.js" defer></script>
+<script type="module"  src="./public/assets/js/swiper-bundle.min.js" defer></script> 
+</head>
+ 
+  <body>
+    <div id="root">
+        <h1>Not Render</h1>
+    </div> 
+    <script type="module" src="./src/App.js"></script> 
+  </body>
+   
+<script src="./public/assets/js/custom.js"></script>
+        <script src="./public/assets/js/mobile-menu.js"></script>
+        <script src="./public/assets/js/main.js"></script>
+ <script>
+        $(document).ready(function () {
+            $('.nav-link').on('click', function () {
+                handleTabClick($(this));
+            });
+
+
+            $('.next-industry').on('click', function () {
+            
+                handleTabClick($(this));
+            });
+
+            
+            function handleTabClick(element) {
+                var target = element.attr('href');
+
+
+                $('.tab-pane').removeClass('show active');
+
+                $(target).addClass('show active');
+            }
+
+             
+        });
+    </script>
+
+        <script>
+            $(document).ready(function () {
+                if ($(window).width() > 1199) {
+                    jQuery('ul.navBar > li').hover(function () {
+                        jQuery(this).addClass('active');
+                        jQuery('ul.innerlinks', this).addClass('active');
+                    }, function () {
+                        jQuery(this).removeClass('active');
+                        jQuery('ul.innerlinks', this).removeClass('active');
+                    });
+
+                    $('.feedback').hide();
+                    $('.renewal').hide();
+                    $('.support').hide();
+                }
+
+                $(".menu_btn").click(function () {
+                    $('.mobMenuWrapper').toggleClass('visible');
+                    $('.floatform').css('z-index', 900);
+                });
+
+                if ($(window).width() < 1200) {
+                    $(".mobMenuWrapper").prependTo("body");
+                    $(".renewalAnc").appendTo(".renewal");
+                    $(".supportAnc").appendTo(".support");
+
+                    $(".navBar>li>a").click(function () {
+                        if ($(this).hasClass("accordActive")) {
+                            if ($(this).hasClass("mobProduct")) {
+                                $(this).removeClass("accordActive, accordClose");
+                            } else {
+                                $(this).removeClass("accordActive").addClass("accordClose");
+                            }
+                        } else {
+                            $(".navBar>li>a").removeClass("accordActive").addClass("accordClose");
+                            if ($(this).hasClass("mobProduct")) {
+                                $(this).removeClass("accordActive, accordClose");
+                            } else {
+                                $(this).addClass("accordActive").removeClass("accordClose");
+                            }
+                        }
+                        $(".navBar>li>a.accordClose").next("ul").slideUp();
+                        $(".navBar>li>a.accordActive").next("ul").slideDown();
+                    });
+
+                    $(".navBar>li> ul>li>a").click(function () {
+                        if ($(this).hasClass("accordActive")) {
+                            if ($(this).hasClass("mobProduct")) {
+                                $(this).removeClass("accordActive, accordClose");
+                            } else {
+                                $(this).removeClass("accordActive").addClass("accordClose");
+                            }
+                        } else {
+                            $(".navBar>li> ul>li>a").removeClass("accordActive").addClass("accordClose");
+                            if ($(this).hasClass("mobProduct")) {
+                                $(this).removeClass("accordActive, accordClose");
+                            } else {
+                                $(this).addClass("accordActive").removeClass("accordClose");
+                            }
+                        }
+                        $(".navBar>li> ul>li>a.accordClose").next("ul").slideUp();
+                        $(".navBar>li> ul>li>a.accordActive").next("ul").slideDown();
+                    });
+                }
+
+                $('.input-field input, select').focus(function () {
+                    $(this).parents('.input-field').addClass('focused');
+                });
+
+                $('.input-field input, select').blur(function () {
+                    var inputValue = $(this).val();
+                    if (inputValue == "") {
+                        $(this).parent().removeClass('filled');
+                        $(this).parents('.input-field').removeClass('focused');
+                    } else {
+                        $(this).parent().addClass('filled');
+                    }
+                });
+                $('.input-field select').blur(function () {
+                    var inputValue = $(this).val();
+                    if (inputValue == "") {
+                        $(this).parent().addClass('filled');
+                        $(this).parents('.input-field').addClass('focused');
+                    }
+                });
+            });
+
+            $('#bgSlider').carousel({
+                pause: false,
+                touch: false
+            });
+        </script>
+
+
+
+        <script>
+            var $a = $('#left-industry a');
+            $('#left-industry').on('click', 'a', function () {
+                $a.removeClass('active');
+                $(this).addClass('active');
+            });
+
+            function showonlyone() { }
+        </script>
+
+     <!-- <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        
+
+
+    </script> -->
+
+    <!-- Gaurav Script Start -->
+
+
+    <script>
+
+        
+        function MarineClick() {
+            
+            localStorage.setItem('actionKey', 'Marine');
+            window.location.href = 'claim';
+        }
+
+        function HealthClick() {
+
+            localStorage.setItem('actionKey', 'Health');
+            window.location.href = 'claim';
+        }
+        function StrengthsClick() {
+
+            localStorage.setItem('actionKey', 'Strength');
+            window.location.href = 'claim';
+        }
+        function PropertyClick() {
+
+            localStorage.setItem('actionKey', 'Property');
+            window.location.href = 'claim';
+        }
+        function LiabilityClick() {
+
+            localStorage.setItem('actionKey', 'Liability');
+            window.location.href = 'claim';
+        }
+        
+    </script>
+
+
+
+
+
+    <!-- Gaurav Script END -->
+</html>
+
+
+
