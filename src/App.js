@@ -2,13 +2,13 @@ import React, { lazy, Suspense } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
- import Home from "./components/Home"; 
+ import Home from "./components/Home1"; 
  
  import Navbarportal from "./components/common/Navbar_Portal";
  
  import  NeedHelp from "./components/common/NeedHelp";
  import  Footerportal  from "./components/common/Footer_Portal";
- import Case_studies_banking from "./components/Case_studies_banking";
+ import Risk_Health from "./components/Risk_liability";
  
  
 import ReactDOM from "react-dom/client";
@@ -35,7 +35,7 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     children: [
-      { path: "/", element: <Case_studies_banking /> },      // renders inside Outlet
+      { path: "/", element: <Home /> },      // renders inside Outlet
       { path: "/home", element: <Home /> },  // same
       { path: "/contact", element: <AppLayout /> },
       { path: "/restaurants/:resId", element: <AppLayout /> },
@@ -55,7 +55,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
 
 //Commented
-
+//  import Case_studies_infra from "./components/Case_studies_infra";
+//  import Case_studies_fmcg from "./components/Case_studies_fmcg";
+// import Case_studies_banking from "./components/Case_studies_banking";
 //  import Case_ites_casestudy from "./components/Case_ites_casestudy";
 //  import Boiler_and_Pressure_Plant_Machinery from "./components/Boiler_and_Pressure_Plant_Machinery";
 // import Award from "./components/Award";
