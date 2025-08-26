@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Navbarportal = () => {
   return (
       <div>
@@ -253,9 +253,9 @@ const Navbarportal = () => {
               </a>
             </li>
             <li className="menu-item other-menu">
-              <a href="/Portal/ContactUs" className="menu-link">
+              <Link to="ContactUs" className="menu-link"> 
                 <div data-i18n="Email">Contact Us</div>
-              </a>
+             </Link> 
             </li>
             <li className="menu-item other-menu"> 
               <a href="/Portal/CPTLogin" className="menu-link"> <div data-i18n="Email">Login</div></a> 
@@ -431,8 +431,9 @@ const Navbarportal = () => {
                     </li>
                   </ul>
                 </div>
-                <a href="/Portal/ContactUs" className="btn contact-us-btn">Contact Us</a>
-                <a href="/Portal/CPTLogin" className="btn  ml-2 login-btn" style={{textTransform: 'capitalize'}}>Login</a>
+              <Link to="ContactUs" className="btn contact-us-btn">Contact Us</Link>
+<Link to="ContactUs" className="btn ml-2 login-btn" style={{ textTransform: "capitalize" }}>Login</Link>
+
               </div>
               <button className="navbar-toggler toggler-desktop" hidden id="toggle-button">
                 <img src="/assets/images/icons/toggle-icon.svg" alt="toggle" />
@@ -748,7 +749,9 @@ const Navbarportal = () => {
                   </div>
                 </div>
                 <div className="d-flex flex-row align-content-center">
-                  <a href="/Portal/ContactUs" className="btn contact-btn-mob">Contact Us</a>
+                 <Link to="ContactUs" className="btn contact-btn-mob">
+  Contact Us
+</Link>
                   <a href="/Portal/CPTLogin" className="btn login-btn-mob ml-3">Login</a>
                 </div>
                 <div className="category-list">

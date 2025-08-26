@@ -53,8 +53,8 @@ return(
               </button>
               <div className="dropdown-menu pl-3" style={{marginLeft: '19%', width: '353px'}}>
                 <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/Standard_Fire_and_Special_perils_policy ">Standard Fire &amp; Special perils Policy</a>
-                <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/Industrial_All_Risk_policy" industrial all risk policy< a>
-                </a><a className="dropdown-item ICICIMenu mb-2" href="/Portal/Mega_Risk_policy  ">Mega Risk Policy</a>
+                <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/Industrial_All_Risk_policy" >industrial all risk policy  </a>
+                <a className="dropdown-item ICICIMenu mb-2" href="/Portal/Mega_Risk_policy  ">Mega Risk Policy</a>
                 <a className="dropdown-item ICICIMenu mb-2" href="/Portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy ">ICICI Bharat Sookshma Udyam Surakha Policy</a>
                 <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy">ICICI Bharat Laghu Udyam Suraksha Policy</a>
                 <a className="dropdown-item ICICIMenu mb-2 active" href="/Portal/ICICI_Bharat_Griha_Raksha_Policy ">ICICI Bharat Griha Raksha Policy</a>
