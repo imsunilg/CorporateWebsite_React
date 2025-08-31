@@ -8,7 +8,7 @@ import Footerportal from "./components/common/Footer_Portal";
 import Home from "./components/Home";  // Home stays eager
 
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, useNavigate } from "react-router-dom";
 
 // ✅ Lazy imports (all except Home)
 const Vas_Solution = lazy(() => import("./components/Vas_Solution"));
@@ -27,6 +27,7 @@ const ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy = lazy(() => import("./components
 const ICICI_Bharat_Griha_Raksha_Policy = lazy(() => import("./components/ICICI_Bharat_Griha_Raksha_Policy"));
 const Group_Personal_Accident = lazy(() => import("./components/Group_Personal_Accident"));
 const Group_Health = lazy(() => import("./components/Group_Health"));
+const Property_Loss_Prevention_exercise = lazy(() => import("./components/Property_Loss_Prevention_exercise"));
 
 const Explore4 = lazy(() => import("./components/Explore4"));
 const Explore3 = lazy(() => import("./components/Explore3"));
@@ -58,10 +59,78 @@ const Milestoneswereached = lazy(() => import("./components/common/Milestoneswer
 
 // ✅ Layout wrapper
 const AppLayout = () => {
+  const navigate = useNavigate();
+
+  const handleAppClick = (e) => {
+    const anchor = e.target.closest && e.target.closest('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('#') || href.startsWith('javascript')) return;
+
+    try {
+      const url = new URL(href, window.location.origin);
+      let path = url.pathname;
+      // normalize legacy /Portal/ and potential prefixed paths like /cprtp/Portal/
+      const portalIdx = path.indexOf('/Portal/');
+      if (portalIdx === -1) return;
+      const key = path.slice(portalIdx + '/Portal/'.length);
+      const map = {
+        'Standard_Fire_and_Special_perils_policy': '/standard-fire',
+        'Industrial_All_Risk_policy': '/industrial-risk',
+        'Mega_Risk_policy': '/mega-risk',
+        'ICICI_Bharat_Sookshma_Udyam_Surakha_Policy': '/sookshma-udyam',
+        'ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy': '/laghu-udyam',
+        'ICICI_Bharat_Griha_Raksha_Policy': '/griha-raksha',
+        'Marine_Inland_Open_Declaration_Policy': '/marine-inland',
+        'Comprehensive_General_Liability': '/general-liability',
+        'Directors_and_Officers_Liability': '/directors-liability',
+        'Cyber_Risk_Insurance': '/cyber-risk',
+        'Professional_Indemnity': '/professional-indemnity',
+        'Group_Health': '/group-health',
+        'Group_Personal_Accident': '/group-accident',
+        'Contractors_All_Risk': '/contractors-risk',
+        'Erection_All_Risk': '/erection-risk',
+        'Machinery_Breakdown': '/machinery-breakdown',
+        'Boiler_and_Pressure_Plant_Machinery': '/boiler',
+        'digital_solutions': '/digital-solutions',
+        'CPTLogin': '/CPTLogin',
+        'Explore1': '/explore1',
+        'Explore2': '/explore2',
+        'Explore3': '/explore3',
+        'Explore4': '/explore4',
+        'Employee_Speak': '/employee-speak',
+        'India_risk_report': '/india-risk-report',
+        'IFSC_Insurance_Office': '/ifsc-office',
+        'Vas_Solution': '/vas-solution',
+        'risk_Engineering': '/risk-engineering',
+        'risk_Health': '/risk-health',
+        'risk_liability': '/risk-health',
+        'Property_Loss_Prevention_exercise': '/property-loss-prevention',
+        'Anywhere_Cashless': '/cashless',
+        'Home': '/',
+        'awards': '/award',
+      };
+      const to = map[key];
+      if (to) {
+        e.preventDefault();
+        const [pathname, hash] = to.split('#');
+        navigate(pathname);
+        if (hash) {
+          setTimeout(() => {
+            const el = document.getElementById(hash) || document.querySelector(`[name="${hash}"]`);
+            if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth' });
+          }, 0);
+        }
+      }
+    } catch (_) {
+      // ignore
+    }
+  };
+
   return (
-    <div className="app">
+    <div className="app" onClick={handleAppClick}>
       <Navbarportal />
-      <br />
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet /> {/* child route renders here */}
       </Suspense>
@@ -94,6 +163,7 @@ const appRouter = createBrowserRouter([
       { path: "/sookshma-udyam", element: <ICICI_Bharat_Sookshma_Udyam_Surakha_Policy /> },
       { path: "/laghu-udyam", element: <ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy /> },
       { path: "/griha-raksha", element: <ICICI_Bharat_Griha_Raksha_Policy /> },
+      { path: "/property-loss-prevention", element: <Property_Loss_Prevention_exercise /> },
       { path: "/group-accident", element: <Group_Personal_Accident /> },
       { path: "/group-health", element: <Group_Health /> },
 
@@ -131,3 +201,4 @@ const appRouter = createBrowserRouter([
 // ✅ Render
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
+

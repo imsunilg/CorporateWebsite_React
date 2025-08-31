@@ -221,27 +221,27 @@ return(
               </a>
               <ul className="menu-sub">
                 <li className="menu-item">
-                  <a onclick="StrengthsClick()" className="menu-link">
+                  <a onClick={() => window.StrengthsClick && window.StrengthsClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Our Strengths</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="HealthClick()" className="menu-link">
+                  <a onClick={() => window.HealthClick && window.HealthClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Health</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="MarineClick()" className="menu-link">
+                  <a onClick={() => window.MarineClick && window.MarineClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Marine</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="PropertyClick()" className="menu-link">
+                  <a onClick={() => window.PropertyClick && window.PropertyClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Property</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="LiabilityClick()" className=" menu-link">
+                  <a onClick={() => window.LiabilityClick && window.LiabilityClick()} className=" menu-link">
                     <div className="text-truncate" data-i18n="List">Liability</div>
                   </a>
                 </li>
@@ -273,7 +273,7 @@ return(
         <div className="layout-overlay layout-menu-toggle">
         </div>
         {/* / Navbar */}
-        <button onclick="topFunction()" id="myBtn" title="Go to top" />
+        <button onClick={() => window.topFunction && window.topFunction()} id="myBtn" title="Go to top" />
         <header style={{position: 'absolute'}}>
           <nav className="navbar navbar-expand-lg nav-parent" style={{position: 'fixed'}}>
             <div className="container">
@@ -400,27 +400,27 @@ return(
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
-                          <a onclick="StrengthsClick()">
+                          <a onClick={() => window.StrengthsClick && window.StrengthsClick()}>
                             <img src="../assets/images/our-strengths.svg" className="mr-2" />Our Strengths
                           </a>
                         </li>
                         <li>
-                          <a onclick="HealthClick()">
+                          <a onClick={() => window.HealthClick && window.HealthClick()}>
                             <img src="../assets/images/healthcare.svg" className="mr-2" /> Health
                           </a>
                         </li>
-                        <li onclick="MarineClick()">
-                          <a className href="#marine">
+                        <li onClick={() => window.MarineClick && window.MarineClick()}>
+                          <a href="#marine">
                             <img src="../assets/images/marine.svg" className="mr-2" /> Marine
                           </a>
                         </li>
                         <li>
-                          <a onclick="PropertyClick()">
+                          <a onClick={() => window.PropertyClick && window.PropertyClick()}>
                             <img src="../assets/images/assets.svg" className="mr-2" /> Property
                           </a>
                         </li>
                         <li>
-                          <a onclick="LiabilityClick()">
+                          <a onClick={() => window.LiabilityClick && window.LiabilityClick()}>
                             <img src="../assets/images/professional.svg" className="mr-2" /> Liability
                           </a>
                         </li>

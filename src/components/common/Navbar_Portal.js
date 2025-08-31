@@ -1,8 +1,118 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const Navbarportal = () => {
+  const navigate = useNavigate();
+
+  // Intercept legacy /Portal/... links and route via React Router
+  const handleNavClick = (e) => {
+    const anchor = e.target.closest && e.target.closest('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#' || href.toLowerCase().startsWith('javascript')) return;
+
+    try {
+      const url = new URL(href, window.location.origin);
+      const path = url.pathname;
+      if (!path.startsWith('/Portal/')) return; // only handle legacy paths
+
+      const key = path.replace('/Portal/', '');
+      const map = {
+        'Standard_Fire_and_Special_perils_policy': '/standard-fire',
+        'Industrial_All_Risk_policy': '/industrial-risk',
+        'Mega_Risk_policy': '/mega-risk',
+        'ICICI_Bharat_Sookshma_Udyam_Surakha_Policy': '/sookshma-udyam',
+        'ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy': '/laghu-udyam',
+        'ICICI_Bharat_Griha_Raksha_Policy': '/griha-raksha',
+        'Marine_Inland_Open_Declaration_Policy': '/marine-inland',
+        'Comprehensive_General_Liability': '/general-liability',
+        'Directors_and_Officers_Liability': '/directors-liability',
+        'Cyber_Risk_Insurance': '/cyber-risk',
+        'Professional_Indemnity': '/professional-indemnity',
+        'Group_Health': '/group-health',
+        'Group_Personal_Accident': '/group-accident',
+        'Contractors_All_Risk': '/contractors-risk',
+        'Erection_All_Risk': '/erection-risk',
+        'Machinery_Breakdown': '/machinery-breakdown',
+        'Boiler_and_Pressure_Plant_Machinery': '/boiler',
+        'digital_solutions': '/digital-solutions',
+        'CPTLogin': '/CPTLogin',
+        'Explore1': '/explore1',
+        'Employee_Speak': '/employee-speak',
+        'Home%2523Awards': '/home#Awards',
+        'IFSC_Insurance_Office': '/ifsc-office',
+        'India_risk_report': '/india-risk-report',
+        'Vas_Solution': '/vas-solution',
+        'risk_Engineering': '/risk-engineering',
+        'risk_Health': '/risk-health',
+      };
+
+      const to = map[key];
+      if (to) {
+        e.preventDefault();
+        // Support hash navigation if present in mapped route
+        const [pathname, hash] = to.split('#');
+        navigate(pathname);
+        if (hash) {
+          // allow DOM to render, then scroll to hash
+          setTimeout(() => {
+            const el = document.getElementById(hash) || document.querySelector(`[name="${hash}"]`);
+            if (el && typeof el.scrollIntoView === 'function') {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 0);
+        }
+      }
+    } catch (_) {
+      // ignore malformed URLs
+    }
+  };
+
+  // Provide no-op globals for legacy inline onclick usage to avoid runtime errors
+  useEffect(() => {
+    window.topFunction = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.StrengthsClick = () => {};
+    window.HealthClick = () => {};
+    window.MarineClick = () => {};
+    window.PropertyClick = () => {};
+    window.LiabilityClick = () => {};
+    // Desktop hover submenu behavior without jQuery
+    const isDesktop = () => window.innerWidth > 1199;
+    const navItems = document.querySelectorAll('#navbar-portal-root .navBar > li');
+    const onEnter = (e) => {
+      if (!isDesktop()) return;
+      const li = e.currentTarget;
+      li.classList.add('active');
+      const inner = li.querySelector('ul.innerlinks');
+      if (inner) inner.classList.add('active');
+    };
+    const onLeave = (e) => {
+      const li = e.currentTarget;
+      li.classList.remove('active');
+      const inner = li.querySelector('ul.innerlinks');
+      if (inner) inner.classList.remove('active');
+    };
+    navItems.forEach((li) => {
+      li.addEventListener('mouseenter', onEnter);
+      li.addEventListener('mouseleave', onLeave);
+    });
+    const onScroll = () => {
+      const btns = document.querySelectorAll('#myBtn');
+      const scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+      const show = scrolled > 200;
+      btns.forEach((b) => { if (b) b.style.display = show ? 'block' : 'none'; });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => {
+      navItems.forEach((li) => {
+        li.removeEventListener('mouseenter', onEnter);
+        li.removeEventListener('mouseleave', onLeave);
+      });
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
   return (
-      <div>
+      <div id="navbar-portal-root" onClick={handleNavClick}>
         {/* header starts */}
         {/* Navbar */}
         <aside id="layout-menu" className="layout-menu menu-vertical menu bg-menu-theme menu-none d-sm-block d-md-none">
@@ -221,27 +331,27 @@ const Navbarportal = () => {
               </a>
               <ul className="menu-sub">
                 <li className="menu-item">
-                  <a onclick="StrengthsClick()" className="menu-link">
+                  <a onClick={() => window.StrengthsClick && window.StrengthsClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Our Strengths</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="HealthClick()" className="menu-link">
+                  <a onClick={() => window.HealthClick && window.HealthClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Health</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="MarineClick()" className="menu-link">
+                  <a onClick={() => window.MarineClick && window.MarineClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Marine</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="PropertyClick()" className="menu-link">
+                  <a onClick={() => window.PropertyClick && window.PropertyClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Property</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="LiabilityClick()" className=" menu-link">
+                  <a onClick={() => window.LiabilityClick && window.LiabilityClick()} className=" menu-link">
                     <div className="text-truncate" data-i18n="List">Liability</div>
                   </a>
                 </li>
@@ -273,9 +383,9 @@ const Navbarportal = () => {
         <div className="layout-overlay layout-menu-toggle">
         </div>
         {/* / Navbar */}
-        <button onclick="topFunction()" id="myBtn" title="Go to top" />
+        <button id="myBtn" title="Go to top" onClick={() => window.topFunction && window.topFunction()} />
         <header style={{position: 'absolute'}}>
-          <nav className="navbar navbar-expand-lg nav-parent" style={{position: 'fixed'}}>
+          <nav id="mainNav" className="navbar navbar-expand-lg nav-parent" style={{position: 'fixed'}}>
             <div className="container">
               <a className="navbar-brand" href="/">
                 <img src="/assets/images/logo.svg" className="img-fluid mobile-view" alt="logo" />
@@ -400,27 +510,27 @@ const Navbarportal = () => {
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
-                          <a onclick="StrengthsClick()">
+                          <a onClick={() => window.StrengthsClick && window.StrengthsClick()}>
                             <img src="/assets/images/our-strengths.svg" className="mr-2" />Our Strengths
                           </a>
                         </li>
                         <li>
-                          <a onclick="HealthClick()">
+                          <a onClick={() => window.HealthClick && window.HealthClick()}>
                             <img src="/assets/images/healthcare.svg" className="mr-2" /> Health
                           </a>
                         </li>
-                        <li onclick="MarineClick()">
-                          <a className href="#marine">
+                        <li onClick={() => window.MarineClick && window.MarineClick()}>
+                          <a href="#marine">
                             <img src="/assets/images/marine.svg" className="mr-2" /> Marine
                           </a>
                         </li>
                         <li>
-                          <a onclick="PropertyClick()">
+                          <a onClick={() => window.PropertyClick && window.PropertyClick()}>
                             <img src="/assets/images/assets.svg" className="mr-2" /> Property
                           </a>
                         </li>
                         <li>
-                          <a onclick="LiabilityClick()">
+                          <a onClick={() => window.LiabilityClick && window.LiabilityClick()}>
                             <img src="/assets/images/professional.svg" className="mr-2" /> Liability
                           </a>
                         </li>
@@ -431,8 +541,8 @@ const Navbarportal = () => {
                     </li>
                   </ul>
                 </div>
-              <Link to="ContactUs" className="btn contact-us-btn">Contact Us</Link>
-<Link to="ContactUs" className="btn ml-2 login-btn" style={{ textTransform: "capitalize" }}>Login</Link>
+              <Link to="/ContactUs" className="btn contact-us-btn">Contact Us</Link>
+              <Link to="/CPTLogin" className="btn ml-2 login-btn" style={{ textTransform: "capitalize" }}>Login</Link>
 
               </div>
               <button className="navbar-toggler toggler-desktop" hidden id="toggle-button">

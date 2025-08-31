@@ -100,7 +100,7 @@ return(
                 <div id="pharma" className="industry-info">
                   <div className="industry-info-head m-t-0f p-t-0f" id="data2">
                     {/*<span class="sub-heading" style="font-weight:bold; ">Risk Management services</span>*/}
-                    <h2 className id="two">Comprehensive Risk Assessment</h2>
+                    <h2 id="two">Comprehensive Risk Assessment</h2>
                     {/*<h5 class="mt-4" style="font-size: 16px; font-weight:bold; color: #ec6625;">OVERVIEW</h5>*/}
                     <p className="mt-3" style={{color: 'black'}}>
                       A Comprehensive Risk Assessment is customised for industries to have a primary focus

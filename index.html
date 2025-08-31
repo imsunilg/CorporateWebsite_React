@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="./public/assets/css/style.css">
         <link rel="stylesheet" href="./public/assets/css/menu.css">
         <link rel="stylesheet" href="./public/assets/css/custom.css">
+<link rel="stylesheet" href="./public/assets/css/override-navbar.css">
 
   <link rel="stylesheet" href="./public/assets/css/style.css" />
   <link rel="stylesheet" href="./public/assets/css/jquery-confirm.min.css" />
@@ -248,3 +249,50 @@
 
 
 
+<script>
+// Delegated navbar behavior to support React-rendered markup
+$(function(){
+  function isDesktop(){ return $(window).width() > 1199; }
+  // Delegated hover for desktop
+  $(document).on('mouseenter', 'ul.navBar > li', function(){
+    if (isDesktop()) {
+      $(this).addClass('active');
+      $('ul.innerlinks', this).addClass('active');
+    }
+  });
+  $(document).on('mouseleave', 'ul.navBar > li', function(){
+    if (isDesktop()) {
+      $(this).removeClass('active');
+      $('ul.innerlinks', this).removeClass('active');
+    }
+  });
+  // Delegated mobile accordion
+  function isMobile(){ return $(window).width() < 1200; }
+  if (isMobile()) {
+    $(document).on('click', '.navBar>li>a', function(){
+      var $a = $(this);
+      if ($a.hasClass('mobProduct')) return;
+      if ($a.hasClass('accordActive')) {
+        $a.removeClass('accordActive').addClass('accordClose');
+      } else {
+        $('.navBar>li>a').removeClass('accordActive').addClass('accordClose');
+        $a.addClass('accordActive').removeClass('accordClose');
+      }
+      $('.navBar>li>a.accordClose').next('ul').slideUp();
+      $('.navBar>li>a.accordActive').next('ul').slideDown();
+    });
+    $(document).on('click', '.navBar>li> ul>li>a', function(){
+      var $a = $(this);
+      if ($a.hasClass('mobProduct')) return;
+      if ($a.hasClass('accordActive')) {
+        $a.removeClass('accordActive').addClass('accordClose');
+      } else {
+        $('.navBar>li> ul>li>a').removeClass('accordActive').addClass('accordClose');
+        $a.addClass('accordActive').removeClass('accordClose');
+      }
+      $('.navBar>li> ul>li>a.accordClose').next('ul').slideUp();
+      $('.navBar>li> ul>li>a.accordActive').next('ul').slideDown();
+    });
+  }
+});
+</script>

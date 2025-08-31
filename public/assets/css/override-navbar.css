@@ -1,0 +1,122 @@
+/* Hide duplicate nav instances embedded in pages; we’ll explicitly enable within navbar-portal-root */
+nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.layout-menu-toggle {
+  display: none !important;
+}
+
+/* Default: desktop shows top nav; mobile hides it */
+#navbar-portal-root nav.navbar.nav-parent {
+  display: block !important;
+  background: #ffffff;
+}
+
+#navbar-portal-root aside#layout-menu {
+  display: none !important;
+}
+
+/* Mobile: show mobile aside, hide desktop nav */
+@media (max-width: 991.98px) {
+  #navbar-portal-root nav.navbar.nav-parent { display: none !important; }
+  #navbar-portal-root aside#layout-menu { display: block !important; }
+  #navbar-portal-root .layout-overlay.layout-menu-toggle { display: block !important; }
+}
+
+/* Visual tweaks */
+#navbar-portal-root .navbar-brand img.mobile-view {
+  max-height: 40px;
+}
+#navbar-portal-root .res-menu-icon {
+  height: 24px;
+  width: 24px;
+}
+
+/* Desktop layout: keep brand and menu in a single row */
+@media (min-width: 992px) {
+  #navbar-portal-root .nav-parent {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    min-height: 64px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  #navbar-portal-root .nav-parent .container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #navbar-portal-root .navbar-brand {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+  }
+  #navbar-portal-root .navbar-collapse {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  #navbar-portal-root .mobMenuWrapper { flex: 1 1 auto; }
+  #navbar-portal-root .mobMenuWrapper ul.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the menu block */
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+  #navbar-portal-root .navbar-toggler {
+    display: none !important;
+  }
+  /* Offset page content so it doesn't sit under the fixed navbar */
+  .app {
+    padding-top: 64px; /* nav height + breathing room */
+  }
+  /* Keep right-side buttons aligned vertically centered */
+  #navbar-portal-root .contact-us-btn,
+  #navbar-portal-root .login-btn {
+    align-self: center;
+    margin-left: 12px;
+    padding: 8px 16px;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Back-to-top button styling */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+  background: #ec6625;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+#myBtn::after {
+  content: '\25B2'; /* ▲ */
+  font-size: 16px;
+  font-weight: 700;
+}
+#myBtn:hover { background: #d4571c; }
+
+/* Remove extra top gaps introduced by inline margins on common headers */
+.app .banner-heading,
+.app .industry-info-head,
+.app .header-container .banner-heading,
+.app .header-container [style*='margin-top'],
+.app .industry-info [style*='margin-top'] {
+  margin-top: 0 !important;
+}
+
+/* Ensure first visible section never adds top margin */
+.app > *:first-child { margin-top: 0 !important; }

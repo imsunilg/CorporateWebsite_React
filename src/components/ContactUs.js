@@ -157,7 +157,7 @@ return(
                   <span className="para-2">Connect with us now!</span>
                 </div>
                 <div className="right">
-                  <button onclick="parent.open('../assets/pdf/CSG-office-address-Locate-us.pdf')" className="contact-us">Locate Us</button>
+                  <button onClick={() => window.open('../assets/pdf/CSG-office-address-Locate-us.pdf', '_blank')} className="contact-us">Locate Us</button>
                 </div>
               </div>
             </div>

@@ -1,6 +1,60 @@
-import react from "react";
-const CPTLoginMFA=()=>{
-return(
+import React, { useEffect, useState, useRef } from "react";
+const CPTLoginMFA = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [captcha, setCaptcha] = useState("");
+  const [errors, setErrors] = useState({});
+  const [captchaCode, setCaptchaCode] = useState("");
+  const toastRef = useRef(null);
+
+  const generateCaptcha = () => {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // omit ambiguous chars
+    let code = "";
+    for (let i = 0; i < 4; i++) code += chars[Math.floor(Math.random() * chars.length)];
+    setCaptchaCode(code);
+    setCaptcha("");
+    setErrors((e) => ({ ...e, captcha: undefined }));
+  };
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const nextErrors = {};
+    if (!username.trim()) nextErrors.username = "User ID is required";
+    if (!password) nextErrors.password = "Password is required";
+    if (!captcha.trim()) nextErrors.captcha = "Captcha is required";
+    // Captcha match check
+    if (!nextErrors.captcha) {
+      if (captcha.trim().toUpperCase() !== captchaCode.toUpperCase()) {
+        nextErrors.captcha = "Invalid captcha";
+        // trigger toast if present
+        const toast = document.getElementById("liveToast");
+        if (toast) {
+          toast.classList.remove("hide");
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+            toast.classList.add("hide");
+          }, 1200);
+        }
+      }
+    }
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length) return;
+
+    // TODO: integrate API call here
+    // Clear fields after successful validation
+    setUsername("");
+    setPassword("");
+    setCaptcha("");
+    generateCaptcha();
+  };
+
+  return (
 
       <div>
       
@@ -18,13 +72,42 @@ return(
               </span>
               <h1 style={{color: 'darkslateblue'}}>Please fill the details below to login</h1>
               <div className="container">
-                <form action="/Portal/CPTLoginMFA" className="login-form" defaultbutton="btnLogin" id="form_Login" method="post">                    <div className="form-group">
+                <form onSubmit={handleSubmit} action="/Portal/CPTLoginMFA" className="login-form" id="form_Login" method="post">
+                  <div className="form-group">
                     <label htmlFor="exampleInputEmail1" className="mb-2 login-label">Username</label>
-                    <input autoComplete="off" className="form-control loginInput" id="txtUserName" maxLength={50} name="txtUserName" placeholder="Enter your Login ID" type="text" defaultValue />
+                    <input
+                      autoComplete="off"
+                      className="form-control loginInput"
+                      id="txtUserName"
+                      maxLength={50}
+                      name="txtUserName"
+                      placeholder="Enter your Login ID"
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                    {errors.username ? (
+                      <div className="text-danger mt-1" style={{ fontSize: 12 }}>{errors.username}</div>
+                    ) : null}
                   </div>
                   <div className="form-group">
                     <label htmlFor="exampleInputPassword1" className="mb-2 labelPassward">Password</label>
-                    <input autoComplete="off" className="form-control passwordinput" id="txtPassword" maxLength={50} name="txtPassword" oncopy="return false;" onpaste="return false;" placeholder="Enter your Password" type="password" />
+                    <input
+                      autoComplete="off"
+                      className="form-control passwordinput"
+                      id="txtPassword"
+                      maxLength={50}
+                      name="txtPassword"
+                      placeholder="Enter your Password"
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      onCopy={(e) => e.preventDefault()}
+                      onPaste={(e) => e.preventDefault()}
+                    />
+                    {errors.password ? (
+                      <div className="text-danger mt-1" style={{ fontSize: 12 }}>{errors.password}</div>
+                    ) : null}
                   </div>
                   <style dangerouslySetInnerHTML={{__html: "\n                        img.captcha-img {\n                            width: 132px;\n                            height: 46px;\n                        }\n\n                        img.captcha-icon {\n                            width: 20px;\n                            height: 20px;\n                            margin-top: 16px;\n                            margin-left: 10px;\n                        }\n\n\n                        .p-lr-0 {\n                            padding-left: 0px;\n                            padding-right: 0px;\n                        }\n\n                        .forgetbtn {\n                            margin: 15px auto 40px auto;\n                            float: none;\n                            width: fit-content;\n                        }\n\n                    " }} />
                   <div className="captca-div">
@@ -33,10 +116,30 @@ return(
                       <label htmlFor="exampleInputPassword1" className="mb-2 labelPassward">Enter Captcha</label>
                     </div>
                     <div className="col-md-12 p-lr-0 d-flex">
-                      <div id="captchaCode" className="captcha-img captchatxtbox" />
-                      <img src="../assets/cp_images/refresh-icon.png" id="refreshCaptcha" className="captcha-icon" />
-                      <input type="text" className="form-control enter-cap" id="captchaInput" placeholder="Enter Captcha" maxLength={4} required />
-                    </div>
+                      <div id="captchaCode" className="captcha-img captchatxtbox d-flex align-items-center justify-content-center" style={{fontWeight: 700, letterSpacing: 4, userSelect: 'none'}}>
+                        {captchaCode}
+                      </div>
+                      <img
+                        src="../assets/cp_images/refresh-icon.png"
+                        id="refreshCaptcha"
+                        className="captcha-icon"
+                        onClick={generateCaptcha}
+                        alt="refresh captcha"
+                        role="button"
+                      />
+                      <input
+                        type="text"
+                        className="form-control enter-cap"
+                        id="captchaInput"
+                        placeholder="Enter Captcha"
+                        maxLength={4}
+                        value={captcha}
+                        onChange={(e) => setCaptcha(e.target.value)}
+                      />
+                  </div>
+                  {errors.captcha ? (
+                    <div className="text-danger mt-1" style={{ fontSize: 12 }}>{errors.captcha}</div>
+                  ) : null}
                   </div>
                   <div className="position-fixed bottom-0 right-0 p-3" style={{zIndex: 5, right: 0, bottom: 0}}>
                     <div id="liveToast" className="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay={1000}>
@@ -45,11 +148,16 @@ return(
                       </div>
                     </div>
                   </div>                                          
-                  <input id="hdnIV_Chavi" name="hdnIV_Chavi1" type="hidden" defaultValue="hdnIV_Chavi2" /><input id="hdnEncKey_Chavi" name="hdnEncKey_Chavi1" type="hidden" defaultValue="hdnEncKey_Chavi2" /><input id="hfkv" name="hfkv" type="hidden" defaultValue /><input data-val="true" data-val-length="Exceeding maxlength of 50" data-val-length-max={100} id="hdnEncUserName" name="UserName" type="hidden" defaultValue /><input data-val="true" data-val-length="Exceeding maxlength of 20" data-val-length-max={100} id="hdnEncPassword" name="Password" type="hidden" defaultValue />                    <div className="text-center mt-5">
+                  <input id="hdnIV_Chavi" name="hdnIV_Chavi1" type="hidden" defaultValue="hdnIV_Chavi2" /><input id="hdnEncKey_Chavi" name="hdnEncKey_Chavi1" type="hidden" defaultValue="hdnEncKey_Chavi2" /><input id="hfkv" name="hfkv" type="hidden" defaultValue="" /><input data-val="true" data-val-length="Exceeding maxlength of 50" data-val-length-max={100} id="hdnEncUserName" name="UserName" type="hidden" defaultValue="" /><input data-val="true" data-val-length="Exceeding maxlength of 20" data-val-length-max={100} id="hdnEncPassword" name="Password" type="hidden" defaultValue="" />                    <div className="text-center mt-5">
                     <input type="submit" className="btn  text-white loginbtn" style={{backgroundColor: '#ec6625'}} name="signin" title="Log In" id="btnLogin" defaultValue="Log In" />
                   </div> 
                   <div className="col-md-12">
-                    <a href="#" className="form-text text-muted forgetbtn text-center" id="forgot-password-link" onclick="showForgotPasswordScreen(); return false;">
+                    <a
+                      href="#"
+                      className="form-text text-muted forgetbtn text-center"
+                      id="forgot-password-link"
+                      onClick={(e) => { e.preventDefault(); const elLogin = document.querySelector('.login-screen'); const elForgot = document.querySelector('.forgot-password-screen'); if (elLogin && elForgot) { elLogin.style.display = 'none'; elForgot.style.display = 'block'; } }}
+                    >
                       Forgot Password?
                     </a> 
                   </div>
@@ -105,15 +213,22 @@ return(
                       </div>
                     </div>
                     <div className="otp-btn">
-                      <input type="button" id="resendOTP" className defaultValue="Resend OTP" />
-                      <input type="button" className name="verifyOTP" title="Log In" id="verifyOTP" defaultValue="Verify OTP" />
+                      <input type="button" id="resendOTP" className="btn text-white loginbtn" defaultValue="Resend OTP" />
+                      <input type="button" className="btn text-white loginbtn" name="verifyOTP" title="Log In" id="verifyOTP" defaultValue="Verify OTP" />
                     </div>
                   </div>
                   <div className="text-center mt-3">
                   </div>
                 </form>
                 <p id="otpMessage" />
-                <a href="#" className="form-text text-muted forgetbtn" id="login-link" onclick="showLoginScreen(); return false;">Login Here</a>
+                <a
+                  href="#"
+                  className="form-text text-muted forgetbtn"
+                  id="login-link"
+                  onClick={(e) => { e.preventDefault(); const elLogin = document.querySelector('.login-screen'); const elForgot = document.querySelector('.forgot-password-screen'); if (elLogin && elForgot) { elLogin.style.display = 'block'; elForgot.style.display = 'none'; } }}
+                >
+                  Login Here
+                </a>
               </div>
             </div>
           </div>

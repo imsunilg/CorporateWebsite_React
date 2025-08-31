@@ -222,36 +222,36 @@ return(
               </a>
               <ul className="menu-sub">
                 <li className="menu-item">
-                  <a onclick="StrengthsClick()" className="menu-link">
+                  <a onClick={() => window.StrengthsClick && window.StrengthsClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Our Strengths</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="HealthClick()" className="menu-link">
+                  <a onClick={() => window.HealthClick && window.HealthClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Health</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="MarineClick()" className="menu-link">
+                  <a onClick={() => window.MarineClick && window.MarineClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Marine</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="PropertyClick()" className="menu-link">
+                  <a onClick={() => window.PropertyClick && window.PropertyClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Property</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="LiabilityClick()" className=" menu-link">
+                  <a onClick={() => window.LiabilityClick && window.LiabilityClick()} className=" menu-link">
                     <div className="text-truncate" data-i18n="List">Liability</div>
                   </a>
                 </li>
               </ul>
             </li>
             <li className="menu-item">
-              <a href="/Portal/digital_solutions" className="menu-link">
+              <Link to="/digital-solutions" className="menu-link">
                 <div data-i18n="Email">Digital Solutions</div>
-              </a>
+              </Link>
             </li>
             <li className="menu-item other-menu">
               <Link to="ContactUs" className="menu-link">
@@ -259,7 +259,7 @@ return(
 </Link>
             </li>
             <li className="menu-item other-menu"> 
-              <a href="/Portal/CPTLogin" className="menu-link"> <div data-i18n="Email">Login</div></a> 
+              <Link to="/CPTLogin" className="menu-link"> <div data-i18n="Email">Login</div></Link> 
             </li>
           </ul>
         </aside>
@@ -274,7 +274,7 @@ return(
         <div className="layout-overlay layout-menu-toggle">
         </div>
         {/* / Navbar */}
-        <button onclick="topFunction()" id="myBtn" title="Go to top" />
+        <button onClick={() => window.topFunction && window.topFunction()} id="myBtn" title="Go to top" />
         <header style={{position: 'absolute'}}>
           <nav className="navbar navbar-expand-lg nav-parent" style={{position: 'fixed'}}>
             <div className="container">
@@ -401,34 +401,34 @@ return(
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
-                          <a onclick="StrengthsClick()">
+                          <a onClick={() => window.StrengthsClick && window.StrengthsClick()}>
                             <img src="../assets/images/our-strengths.svg" className="mr-2" />Our Strengths
                           </a>
                         </li>
                         <li>
-                          <a onclick="HealthClick()">
+                          <a onClick={() => window.HealthClick && window.HealthClick()}>
                             <img src="../assets/images/healthcare.svg" className="mr-2" /> Health
                           </a>
                         </li>
-                        <li onclick="MarineClick()">
-                          <a className href="#marine">
+                        <li onClick={() => window.MarineClick && window.MarineClick()}>
+                          <a href="#marine">
                             <img src="../assets/images/marine.svg" className="mr-2" /> Marine
                           </a>
                         </li>
                         <li>
-                          <a onclick="PropertyClick()">
+                          <a onClick={() => window.PropertyClick && window.PropertyClick()}>
                             <img src="../assets/images/assets.svg" className="mr-2" /> Property
                           </a>
                         </li>
                         <li>
-                          <a onclick="LiabilityClick()">
+                          <a onClick={() => window.LiabilityClick && window.LiabilityClick()}>
                             <img src="../assets/images/professional.svg" className="mr-2" /> Liability
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a id="becomeAgent" className="sliding-link" href="/Portal/digital_solutions">Digital Solutions</a>
+                      <Link id="becomeAgent" className="sliding-link" to="/digital-solutions">Digital Solutions</Link>
                     </li>
                   </ul>
                 </div>
@@ -458,7 +458,7 @@ return(
                 </div>
                 <div className="category-list">
                   <ul>
-                    <li><a href="/Portal/Explore1">Blogs</a></li>
+                    <li><Link to="/explore1">Blogs</Link></li>
                     <li><a href="#">Announcements</a></li>
                     <li><a href="https://www.icicilombard.com/about-us" target="_blank">About Us</a></li>
                     <li><a href="#">Awards and Accolades</a></li>
@@ -793,7 +793,7 @@ return(
                   <img src="../assets/images/Indian-Risk-Report-mob.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/Indian-Risk-Report-web.jpg" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
-                    <a className="btn know-more-btn" href="/Portal/India_risk_report">Know More</a>
+                    <Link className="btn know-more-btn" to="/india-risk-report">Know More</Link>
                   </div>
                   <div>
                     <a href="https://www.icicilombard.com/docs/default-source/default-document-library/icici-lombard-irm-india-risk-report-2024-edition-2-0.pdf" className="btn cash-mobile">Click Here</a>
@@ -805,7 +805,7 @@ return(
                   <div className="banner-caption">
                     <h5>India Risk Management Awards 2023-2024</h5>
                     <p>Each year, we honor exceptional risk takers in the field of risk management</p>
-                    <a href="/Portal/awards" className="btn know-more-btn irma-know-mob">Know More</a>
+                    <Link to="/award" className="btn know-more-btn irma-know-mob">Know More</Link>
                   </div>
                 </div>
                 <div className="banner-slide">
@@ -814,14 +814,14 @@ return(
                   <div className="banner-caption">
                     <h5>Unlocking new opportunities – ICICI Lombard IIO</h5>
                     <p>India’s first Financial Services SEZ dedicated to development and export of financial services in and from India</p>
-                    <a href="/Portal/IFSC_Insurance_Office" className="btn know-more-btn lastBtn">Know More</a>
+                    <Link to="/ifsc-office" className="btn know-more-btn lastBtn">Know More</Link>
                   </div>
                 </div>
                 <div className="banner-slide">
                   <img src="../assets/images/cashless-banner.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/anywhere-cashless-mobile.png" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
-                    <a href="/Portal/Anywhere_Cashless" className="btn know-more-btn cash-mob">Know More</a>
+                    <Link to="/cashless" className="btn know-more-btn cash-mob">Know More</Link>
                   </div>
                 </div>
               </div>
@@ -911,11 +911,11 @@ return(
                         </button>
                         <div className="nav flex-column nav-pills me-3 nav-shadow m-l-m29 p-l-30 bg-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                           <div className="dropdown-menu pl-3 text-left" style={{marginLeft: '3% !important'}}>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab1" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onclick="toggleActive(0)">Pharmaceuticals</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onclick="toggleActive(1)">Construction &amp; Infrastructure</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onclick="toggleActive(2)">IT/ITES</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onclick="toggleActive(3)">Banking &amp; Financial Services</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab5" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onclick="toggleActive(4)">FMCG &amp; Consumer Goods</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab1" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)}>Pharmaceuticals</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>Construction &amp; Infrastructure</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)}>IT/ITES</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(3)}>Banking &amp; Financial Services</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab5" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(4)}>FMCG &amp; Consumer Goods</a>
                           </div>
                           <div className="tab-content" id="v-pills-tabContent">
                             <div className="tab-pane fade show active me-4" id="v-link-tab01" role="tabpanel" aria-labelledby="v-link-tab1">
@@ -928,7 +928,7 @@ return(
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Pharmaceuticals</h2>
-                                      <a className="next-industry" style={{float: 'right'}} id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onclick="toggleActive(1)">
+                                      <a className="next-industry" style={{float: 'right'}} id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
                                       <p>
@@ -1229,10 +1229,10 @@ return(
                                               </p>
                                             </div>
                                           </div>
-                                          <a href="/Portal/case_studies_pharma" className="case-studies-gaurav case-studies-know-more">
+                                          <Link to="/case-pharma" className="case-studies-gaurav case-studies-know-more">
                                             Read More
                                             <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{marginLeft: '10px'}} />
-                                          </a>
+                                          </Link>
                                         </div>
                                       </div>
                                       <div className="industry-accordion">
@@ -1285,10 +1285,10 @@ return(
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Construction &amp; Infrastructure</h2>
-                                      <a id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab01" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onclick="toggleActive(0)" className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab01" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
-                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onclick="toggleActive(2)" className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
                                     </div>
@@ -1502,10 +1502,10 @@ return(
                                               <p>The insured company is a prominent and well-established paper and board manufacturing company based in India. With a rich history spanning several decades, the company has earned a reputation for excellence in producing high-quality paper and board products. </p>
                                             </div>
                                           </div>
-                                          <a href="/Portal/case_studies_infra" className="case-studies-gaurav  case-studies-know-more m-t-20" style={{marginTop: '-30px'}}>
+                                          <Link to="/case-infra" className="case-studies-gaurav  case-studies-know-more m-t-20" style={{marginTop: '-30px'}}>
                                             Read More
                                             <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{marginLeft: '10px'}} />
-                                          </a>
+                                          </Link>
                                         </div>
                                       </div>
                                       <div className="industry-accordion">
@@ -1613,10 +1613,10 @@ return(
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>IT/ITES</h2>
-                                      <a id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onclick="toggleActive(1)" className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onclick="toggleActive(3)" className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
                                       <p>
@@ -1801,10 +1801,10 @@ return(
                                               <p>A leading IT company in India, with a workforce of approximately 5,000 employees, predominantly male (70%) with an average age of 34 years. The demographic trends suggested a higher propensity for certain health conditions including diabetes, pre-diabetes, obesity and pregnancy.</p>
                                             </div>
                                           </div>
-                                          <a href="/Portal/case_ites_casestudy" className="case-studies-gaurav case-studies-know-more" style={{marginTop: '-40px'}}>
+                                          <Link to="/case-ites" className="case-studies-gaurav case-studies-know-more" style={{marginTop: '-40px'}}>
                                             Read More
                                             <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{marginLeft: '10px'}} />
-                                          </a>
+                                          </Link>
                                         </div>
                                       </div>
                                       <div className="industry-accordion">
@@ -1816,7 +1816,7 @@ return(
                                           </a>
                                         </div>
                                         <div id="ITES-collapseFive" className="Home-slider-mob collapse mt-2" data-parent="#pharma-accordion4">
-                                          <div id className="testimonialSlider">
+                                          <div className="testimonialSlider">
                                             <div className="industry-accordion-body">
                                               <h3>
                                                 Lexmark International (India) Pvt ltd
@@ -1853,10 +1853,10 @@ return(
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Banking &amp; Financial Services</h2>
-                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onclick="toggleActive(2)" className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onclick="toggleActive(4)" className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(4)} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
                                       <p>
@@ -2068,10 +2068,10 @@ return(
                                               </p>
                                             </div>
                                           </div>
-                                          <a href="/Portal/case_studies_banking" className="case-studies-gaurav case-studies-know-more" style={{marginTop: '-40px'}}>
+                                          <Link to="/case-banking" className="case-studies-gaurav case-studies-know-more" style={{marginTop: '-40px'}}>
                                             Read More
                                             <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{marginLeft: '10px'}} />
-                                          </a>
+                                          </Link>
                                         </div>
                                       </div>
                                       <div className="industry-accordion">
@@ -2083,7 +2083,7 @@ return(
                                           </a>
                                         </div>
                                         <div id="banking-collapseFive" className="Home-slider-mob collapse mt-2" data-parent="#pharma-accordion5">
-                                          <div id className="testimonialSlider">
+                                          <div className="testimonialSlider">
                                             <div className="industry-accordion-body">
                                               <h3>Amicorp</h3>
                                               <p className="text-black text-italic">
@@ -2132,7 +2132,7 @@ return(
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>FMCG &amp; Consumer Goods</h2>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="true" onclick="toggleActive(3)" className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
                                       </a>
                                       {/* <a href="#carousel__slide1" class="next-industry" style="float: right;">
@@ -2364,10 +2364,10 @@ return(
                                               loss due to fire breakout.
                                             </p>
                                           </div>
-                                          <a href="/Portal/case_studies_fmcg" className="case-studies-gaurav case-studies-know-more m-t-20" style={{marginTop: '-30px'}}>
+                                          <Link to="/case-fmcg" className="case-studies-gaurav case-studies-know-more m-t-20" style={{marginTop: '-30px'}}>
                                             Read More
                                             <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{marginLeft: '10px'}} />
-                                          </a>
+                                          </Link>
                                         </div>
                                       </div>
                                       <div className="industry-accordion">
@@ -2462,33 +2462,33 @@ return(
               </div>
               <div id="image-slider" className="image-wrapper">
                 <div className="position-relative img-effect">
-                  <a href="/Portal/Explore1">
+                  <Link to="/explore1">
                     <img src="../assets/images/MouseOver_Wellness.jpg" className="img-fluid first-img" alt="employee-speak" />
-                  </a>
+                  </Link>
                   <div className="img-content employee-para">
-                    <tab className="employee-pill">Maximising returns on wellness</tab>
+                    <span className="employee-pill">Maximising returns on wellness</span>
                     <p>As organizations navigate the ever-changing landscape of the modern workplace, they are increasingly recognizing the profound impact.</p>
-                    <a href="/Portal/Explore1" className="milestone-content-wrapper">Read More</a>
+                    <Link to="/explore1" className="milestone-content-wrapper">Read More</Link>
                   </div>
                 </div>
                 <div className="position-relative img-effect">
-                  <a href="/Portal/Explore2">
+                  <Link to="/explore2">
                     <img src="../assets/images/MouseOver_CYBERSECURITY.jpg" className="img-fluid second-img" alt="healthcare" />
-                  </a>
+                  </Link>
                   <div className="img-content pill-margin">
-                    <tab className="employee-pill">Cybersecurity</tab>
+                    <span className="employee-pill">Cybersecurity</span>
                     <p>In today's rapidly evolving digital landscape, the rise of cybersecurity threats has become a paramount concern for organizations worldwide.</p>
-                    <a href="/Portal/Explore2" className="milestone-content-wrapper">Read More</a>
+                    <Link to="/explore2" className="milestone-content-wrapper">Read More</Link>
                   </div>
                 </div>
                 <div className="position-relative img-effect">
-                  <a href="/Portal/Explore3">
+                  <Link to="/explore3">
                     <img src="../assets/images/MouseOver_Crisis_Management.jpg" className="img-fluid third-img" alt="ites" />
-                  </a>
+                  </Link>
                   <div className="img-content pill-margin">
-                    <tab className="employee-pill">Mitigating risk in crisis</tab>
+                    <span className="employee-pill">Mitigating risk in crisis</span>
                     <p>The word crisis holds its origins to the Greek work - krisis (critical). It is defined as an event that can or has the potential to create ...</p>
-                    <a href="/Portal/Explore3" className="milestone-content-wrapper">Read More</a>
+                    <Link to="/explore3" className="milestone-content-wrapper">Read More</Link>
                   </div>
                 </div>
               </div>
@@ -2557,7 +2557,7 @@ return(
                       <p className="para-2" style={{position: 'absolute', top: '92px'}}>Connect with us now!</p>
                     </div>
                     <div className="right">
-                      <button onclick="parent.open('../assets/pdf/CSG-office-address-Locate-us.pdf')" className="contact-us">Locate Us</button>
+          <button onClick={() => window.open('../assets/pdf/CSG-office-address-Locate-us.pdf', '_blank')} className="contact-us">Locate Us</button>
                     </div>
                   </div>
                   <div className="col-md-5 col-sm-6 contact-us-wrapper">

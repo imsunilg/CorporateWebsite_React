@@ -1,4 +1,5 @@
 import react from "react";
+import { Link } from "react-router-dom";
 const Risk_Health=()=>{
 return(
 
@@ -36,43 +37,43 @@ return(
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Standard_Fire_and_Special_perils_policy" className="menu-link">
+                      <Link to="/standard-fire" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Standard Fire &amp; Special perils
                           policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Industrial_All_Risk_policy" className="menu-link">
+                      <Link to="/industrial-risk" className="menu-link">
                         <div className="text-truncate" data-i18n="Security">Industrial All Risk policy</div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Mega_Risk_policy" className="menu-link">
+                      <Link to="/mega-risk" className="menu-link">
                         <div className="text-truncate" data-i18n="Billing & Plans">Mega Risk policy</div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy" className="menu-link">
+                      <Link to="/sookshma-udyam" className="menu-link">
                         <div className="text-truncate" data-i18n="Notifications">
                           ICICI Bharat Sookshma Udyam
                           Suraksha Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy" className="menu-link">
+                      <Link to="/laghu-udyam" className="menu-link">
                         <div className="text-truncate" data-i18n="Connections">
                           ICICI Bharat Laghu Udyam
                           Suraksha Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_Griha_Raksha_Policy" className="menu-link">
+                      <Link to="/griha-raksha" className="menu-link">
                         <div className="text-truncate" data-i18n="Connections">ICICI Bharat Griha Raksha Policy</div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -82,11 +83,11 @@ return(
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Marine_Inland_Open_Declaration_Policy" className="menu-link">
+                      <Link to="/marine-inland" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Marine Open Declaration Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -96,18 +97,18 @@ return(
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Comprehensive_General_Liability" className="menu-link">
+                      <Link to="/general-liability" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Comprehensive General Liability
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Directors_and_Officers_Liability" className="menu-link">
+                      <Link to="/directors-liability" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Directors and Officers Liability
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
                       <a href="/Portal/Cyber_Risk_Insurance" className="menu-link">
@@ -221,27 +222,27 @@ return(
               </a>
               <ul className="menu-sub">
                 <li className="menu-item">
-                  <a onclick="StrengthsClick()" className="menu-link">
+                  <a onClick={() => window.StrengthsClick && window.StrengthsClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Our Strengths</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="HealthClick()" className="menu-link">
+                  <a onClick={() => window.HealthClick && window.HealthClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Health</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="MarineClick()" className="menu-link">
+                  <a onClick={() => window.MarineClick && window.MarineClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Marine</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="PropertyClick()" className="menu-link">
+                  <a onClick={() => window.PropertyClick && window.PropertyClick()} className="menu-link">
                     <div className="text-truncate" data-i18n="List">Property</div>
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a onclick="LiabilityClick()" className=" menu-link">
+                  <a onClick={() => window.LiabilityClick && window.LiabilityClick()} className=" menu-link">
                     <div className="text-truncate" data-i18n="List">Liability</div>
                   </a>
                 </li>
@@ -273,7 +274,7 @@ return(
         <div className="layout-overlay layout-menu-toggle">
         </div>
         {/* / Navbar */}
-        <button onclick="topFunction()" id="myBtn" title="Go to top" />
+        <button onClick={() => window.topFunction && window.topFunction()} id="myBtn" title="Go to top" />
         <header style={{position: 'absolute'}}>
           <nav className="navbar navbar-expand-lg nav-parent" style={{position: 'fixed'}}>
             <div className="container">
@@ -400,27 +401,27 @@ return(
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
-                          <a onclick="StrengthsClick()">
+                          <a onClick={() => window.StrengthsClick && window.StrengthsClick()}>
                             <img src="../assets/images/our-strengths.svg" className="mr-2" />Our Strengths
                           </a>
                         </li>
                         <li>
-                          <a onclick="HealthClick()">
+                          <a onClick={() => window.HealthClick && window.HealthClick()}>
                             <img src="../assets/images/healthcare.svg" className="mr-2" /> Health
                           </a>
                         </li>
-                        <li onclick="MarineClick()">
-                          <a className href="#marine">
+                        <li onClick={() => window.MarineClick && window.MarineClick()}>
+                          <a href="#marine">
                             <img src="../assets/images/marine.svg" className="mr-2" /> Marine
                           </a>
                         </li>
                         <li>
-                          <a onclick="PropertyClick()">
+                          <a onClick={() => window.PropertyClick && window.PropertyClick()}>
                             <img src="../assets/images/assets.svg" className="mr-2" /> Property
                           </a>
                         </li>
                         <li>
-                          <a onclick="LiabilityClick()">
+                          <a onClick={() => window.LiabilityClick && window.LiabilityClick()}>
                             <img src="../assets/images/professional.svg" className="mr-2" /> Liability
                           </a>
                         </li>

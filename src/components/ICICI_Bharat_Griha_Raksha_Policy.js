@@ -1,5 +1,6 @@
 
 import react from "react";
+import { Link } from "react-router-dom";
 const ICICI_Bharat_Griha_Raksha_Policy=()=>{
 return(
 
@@ -14,16 +15,17 @@ return(
                       <img src="../assets/images/home-icon.jpg" className="Homeicon mr-2" alt="home-icon" />
                     </li>
                     <li className="breadcrumb-item">
-                      <i className="fa-solid fa-house mr-2" style={{color: 'rgb(212, 197, 197)', display: 'none'}} /><a href="#" className="headerContent disabled" style={{color: 'black'}}>Products</a>
+                      <i className="fa-solid fa-house mr-2" style={{color: 'rgb(212, 197, 197)', display: 'none'}} />
+                      <span className="headerContent disabled" style={{color: 'black'}}>Products</span>
                     </li>
                     <li className="breadcrumb-item">
-                      <a href="#" className="headerContent disabled" style={{color: 'black'}}>Property</a>
+                      <span className="headerContent disabled" style={{color: 'black'}}>Property</span>
                     </li>
                     <li className="breadcrumb-item">
-                      <a href="#" className="headerContent disabled" style={{color: '#ce6625'}}>
+                      <span className="headerContent disabled" style={{color: '#ce6625'}}>
                         ICICI Bharat
                         Griha Raksha Policy
-                      </a>
+                      </span>
                     </li>
                   </ol>
                 </nav>
@@ -52,12 +54,12 @@ return(
                 <img src="../assets/images/icons/white-down-arrow.svg" className="img-fluid" alt="Dropdown arrow" />
               </button>
               <div className="dropdown-menu pl-3" style={{marginLeft: '19%', width: '353px'}}>
-                <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/Standard_Fire_and_Special_perils_policy ">Standard Fire &amp; Special perils Policy</a>
-                <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/Industrial_All_Risk_policy" >industrial all risk policy  </a>
-                <a className="dropdown-item ICICIMenu mb-2" href="/Portal/Mega_Risk_policy  ">Mega Risk Policy</a>
-                <a className="dropdown-item ICICIMenu mb-2" href="/Portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy ">ICICI Bharat Sookshma Udyam Surakha Policy</a>
-                <a className="dropdown-item ICICIMenu mb-2 " href="/Portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy">ICICI Bharat Laghu Udyam Suraksha Policy</a>
-                <a className="dropdown-item ICICIMenu mb-2 active" href="/Portal/ICICI_Bharat_Griha_Raksha_Policy ">ICICI Bharat Griha Raksha Policy</a>
+                <Link className="dropdown-item ICICIMenu mb-2 " to="/standard-fire">Standard Fire &amp; Special perils Policy</Link>
+                <Link className="dropdown-item ICICIMenu mb-2 " to="/industrial-risk">industrial all risk policy</Link>
+                <Link className="dropdown-item ICICIMenu mb-2" to="/mega-risk">Mega Risk Policy</Link>
+                <Link className="dropdown-item ICICIMenu mb-2" to="/sookshma-udyam">ICICI Bharat Sookshma Udyam Surakha Policy</Link>
+                <Link className="dropdown-item ICICIMenu mb-2 " to="/laghu-udyam">ICICI Bharat Laghu Udyam Suraksha Policy</Link>
+                <Link className="dropdown-item ICICIMenu mb-2 active" to="/griha-raksha">ICICI Bharat Griha Raksha Policy</Link>
                 <img src="../assets/images/backdrop-arrow.svg" className="img-fluid backdrop-arrow" alt="back" />
               </div>
             </div>
@@ -248,10 +250,10 @@ return(
                     </div>
                   </div>
                 </div>
-                <a href="/Portal/Property_Loss_Prevention_exercise " className="next-industry mt-1">
+                <Link to="/property-loss-prevention" className="next-industry mt-1">
                   Take a Look at Risk Management Services
                   <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
-                </a>
+                </Link>
                 <div className="row mt-3 DisclaimerSec py-2">
                   <div className="col-sm-12">
                     <h5>Disclaimer</h5>
