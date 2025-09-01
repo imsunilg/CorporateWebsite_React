@@ -6,53 +6,53 @@ import Navbarportal from "./components/common/Navbar_Portal";
 import ShimmerPage from "./components/common/ShimmerPage";
 import NeedHelp from "./components/common/NeedHelp";
 import Footerportal from "./components/common/Footer_Portal"; 
-import Home from "./components/Home";  // Home stays eager
+import Home from "./components/portal/Home";  // Home stays eager
 
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet, useNavigate } from "react-router-dom";
 
 // ✅ Lazy imports (all except Home)
-const Vas_Solution = lazy(() => import("./components/Vas_Solution"));
-const Standard_Fire_and_Special_perils_policy = lazy(() => import("./components/Standard_Fire_and_Special_perils_policy"));
-const Risk_Health = lazy(() => import("./components/Risk_liability"));
-const Risk_Engineering = lazy(() => import("./components/Risk_Engineering"));
-const Professional_Indemnity = lazy(() => import("./components/Professional_Indemnity"));
-const Mega_Risk_policy = lazy(() => import("./components/Mega_Risk_policy"));
-const Marine_Inland_Open_Declaration_Policy = lazy(() => import("./components/Marine_Inland_Open_Declaration_Policy"));
-const Machinery_Breakdown = lazy(() => import("./components/Machinery_Breakdown"));
-const Industrial_All_Risk_policy = lazy(() => import("./components/Industrial_All_Risk_policy"));
-const India_risk_report = lazy(() => import("./components/India_risk_report"));
-const IFSC_Insurance_Office = lazy(() => import("./components/IFSC_Insurance_Office"));
-const ICICI_Bharat_Sookshma_Udyam_Surakha_Policy = lazy(() => import("./components/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy"));
-const ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy = lazy(() => import("./components/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy"));
-const ICICI_Bharat_Griha_Raksha_Policy = lazy(() => import("./components/ICICI_Bharat_Griha_Raksha_Policy"));
-const Group_Personal_Accident = lazy(() => import("./components/Group_Personal_Accident"));
-const Group_Health = lazy(() => import("./components/Group_Health"));
-const Property_Loss_Prevention_exercise = lazy(() => import("./components/Property_Loss_Prevention_exercise"));
+const Vas_Solution = lazy(() => import("./components/portal/Vas_Solution"));
+const Standard_Fire_and_Special_perils_policy = lazy(() => import("./components/portal/Standard_Fire_and_Special_perils_policy"));
+const Risk_Health = lazy(() => import("./components/portal/Risk_liability"));
+const Risk_Engineering = lazy(() => import("./components/portal/Risk_Engineering"));
+const Professional_Indemnity = lazy(() => import("./components/portal/Professional_Indemnity"));
+const Mega_Risk_policy = lazy(() => import("./components/portal/Mega_Risk_policy"));
+const Marine_Inland_Open_Declaration_Policy = lazy(() => import("./components/portal/Marine_Inland_Open_Declaration_Policy"));
+const Machinery_Breakdown = lazy(() => import("./components/portal/Machinery_Breakdown"));
+const Industrial_All_Risk_policy = lazy(() => import("./components/portal/Industrial_All_Risk_policy"));
+const India_risk_report = lazy(() => import("./components/portal/India_risk_report"));
+const IFSC_Insurance_Office = lazy(() => import("./components/portal/IFSC_Insurance_Office"));
+const ICICI_Bharat_Sookshma_Udyam_Surakha_Policy = lazy(() => import("./components/portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy"));
+const ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy = lazy(() => import("./components/portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy"));
+const ICICI_Bharat_Griha_Raksha_Policy = lazy(() => import("./components/portal/ICICI_Bharat_Griha_Raksha_Policy"));
+const Group_Personal_Accident = lazy(() => import("./components/portal/Group_Personal_Accident"));
+const Group_Health = lazy(() => import("./components/portal/Group_Health"));
+const Property_Loss_Prevention_exercise = lazy(() => import("./components/portal/Property_Loss_Prevention_exercise"));
 
-const Explore4 = lazy(() => import("./components/Explore4"));
-const Explore3 = lazy(() => import("./components/Explore3"));
-const Explore2 = lazy(() => import("./components/Explore2"));
-const Explore1 = lazy(() => import("./components/Explore1"));
-const Erection_All_Risk = lazy(() => import("./components/Erection_All_Risk"));
-const Employee_Speak = lazy(() => import("./components/Employee_Speak"));
+const Explore4 = lazy(() => import("./components/portal/Explore4"));
+const Explore3 = lazy(() => import("./components/portal/Explore3"));
+const Explore2 = lazy(() => import("./components/portal/Explore2"));
+const Explore1 = lazy(() => import("./components/portal/Explore1"));
+const Erection_All_Risk = lazy(() => import("./components/portal/Erection_All_Risk"));
+const Employee_Speak = lazy(() => import("./components/portal/Employee_Speak"));
 
-const Directors_and_Officers_Liability = lazy(() => import("./components/Directors_and_Officers_Liability"));
-const Digital_solutions = lazy(() => import("./components/Digital_solutions"));
-const Cyber_Risk_Insurance = lazy(() => import("./components/Cyber_Risk_Insurance"));
-const CPTLoginMFA = lazy(() => import("./components/CPTLoginMFA"));
-const Contractors_All_Risk = lazy(() => import("./components/Contractors_All_Risk"));
-const ContactUs = lazy(() => import("./components/ContactUs"));
+const Directors_and_Officers_Liability = lazy(() => import("./components/portal/Directors_and_Officers_Liability"));
+const Digital_solutions = lazy(() => import("./components/portal/Digital_solutions"));
+const Cyber_Risk_Insurance = lazy(() => import("./components/portal/Cyber_Risk_Insurance"));
+const CPTLoginMFA = lazy(() => import("./components/portal/CPTLoginMFA"));
+const Contractors_All_Risk = lazy(() => import("./components/portal/Contractors_All_Risk"));
+const ContactUs = lazy(() => import("./components/portal/ContactUs"));
 
-const Comprehensive_General_Liability = lazy(() => import("./components/Comprehensive_General_Liability"));
-const Case_studies_pharma = lazy(() => import("./components/Case_studies_pharma"));
-const Case_studies_infra = lazy(() => import("./components/Case_studies_infra"));
-const Case_studies_fmcg = lazy(() => import("./components/Case_studies_fmcg"));
-const Case_studies_banking = lazy(() => import("./components/Case_studies_banking"));
-const Case_ites_casestudy = lazy(() => import("./components/Case_ites_casestudy"));
-const Boiler_and_Pressure_Plant_Machinery = lazy(() => import("./components/Boiler_and_Pressure_Plant_Machinery"));
-const Award = lazy(() => import("./components/Award"));
-const Anywhere_Cashless = lazy(() => import("./components/Anywhere_Cashless"));
+const Comprehensive_General_Liability = lazy(() => import("./components/portal/Comprehensive_General_Liability"));
+const Case_studies_pharma = lazy(() => import("./components/portal/Case_studies_pharma"));
+const Case_studies_infra = lazy(() => import("./components/portal/Case_studies_infra"));
+const Case_studies_fmcg = lazy(() => import("./components/portal/Case_studies_fmcg"));
+const Case_studies_banking = lazy(() => import("./components/portal/Case_studies_banking"));
+const Case_ites_casestudy = lazy(() => import("./components/portal/Case_ites_casestudy"));
+const Boiler_and_Pressure_Plant_Machinery = lazy(() => import("./components/portal/Boiler_and_Pressure_Plant_Machinery"));
+const Award = lazy(() => import("./components/portal/Award"));
+const Anywhere_Cashless = lazy(() => import("./components/portal/Anywhere_Cashless"));
 
 const Ourcasestudiesmain = lazy(() => import("./components/common/Ourcasestudiesmain"));
 const Milestoneswereached = lazy(() => import("./components/common/Milestoneswereached"));

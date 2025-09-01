@@ -1,8 +1,8 @@
 import React from "react";
 
- import NeedHelp from "./common/NeedHelp";
- import Navbarportal from "./common/Navbar_Portal";
- import Footerportal from "./common/Footer_Portal";
+ import NeedHelp from "../common/NeedHelp";
+ import Navbarportal from "../common/Navbar_Portal";
+ import Footerportal from "../common/Footer_Portal";
 
 const Anywhere_Cashless = () => {
   return (

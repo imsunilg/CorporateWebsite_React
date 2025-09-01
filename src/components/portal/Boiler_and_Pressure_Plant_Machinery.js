@@ -1,7 +1,7 @@
 import React from "react";
 
- import Navbarportal from "./common/Navbar_Portal";
- import Footerportal from "./common/Footer_Portal";
+ import Navbarportal from "../common/Navbar_Portal";
+ import Footerportal from "../common/Footer_Portal";
 const Boiler_and_Pressure_Plant_Machinery = () => {
     return (
 

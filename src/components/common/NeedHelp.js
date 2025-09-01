@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const NeedHelp = () => {
   return (
     <div className="need-help-wrapper">
@@ -15,9 +15,8 @@ const NeedHelp = () => {
             Want to know more about our Products &amp; Risk Management Services?
           </p>
         </div>
-        <a href="/Portal/ContactUs" className="contact-us">
-          Contact Us
-        </a>
+         
+         <Link to="ContactUs" className="contact-us">Contact Us</Link>
       </div>
     </div>
   );

@@ -1783,7 +1783,7 @@ return(
                       <p className="para-2" style={{position: 'absolute', top: '92px'}}>Connect with us now!</p>
                     </div>
                     <div className="right">
-          <button onClick={() => window.open('../assets/pdf/CSG-office-address-Locate-us.pdf', '_blank')} className="contact-us">Locate Us</button>
+          <button onClick={() => window.open('https://corporate.icicilombard.com/assets/pdf/CSG-office-address-Locate-us.pdf', '_blank')} className="contact-us">Locate Us</button>
                     </div>
                   </div>
                   <div className="col-md-5 col-sm-6 contact-us-wrapper">

@@ -22,7 +22,7 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 
 /* Visual tweaks */
 #navbar-portal-root .navbar-brand img.mobile-view {
-  max-height: 40px;
+  max-height: 55px;
 }
 #navbar-portal-root .res-menu-icon {
   height: 24px;
@@ -39,8 +39,11 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
     right: 0;
     background: #fff;
     z-index: 1000;
-    min-height: 64px;
+    height: 64px; /* fixed height to match content offset */
     border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
   }
   #navbar-portal-root .nav-parent .container {
     max-width: 100%;
@@ -52,6 +55,10 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
     margin-right: 16px;
     display: flex;
     align-items: center;
+  }
+  #navbar-portal-root .navbar-brand img {
+    max-height: 48px; /* keep brand from pushing menu down */
+    height: auto;
   }
   #navbar-portal-root .navbar-collapse {
     display: flex !important;
@@ -67,12 +74,21 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
     flex-wrap: nowrap;
     margin: 0;
   }
+  /* Tighten vertical padding so items don't touch/cross the bottom line */
+  #navbar-portal-root .mobMenuWrapper ul.navBar li a {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
   #navbar-portal-root .navbar-toggler {
     display: none !important;
   }
   /* Offset page content so it doesn't sit under the fixed navbar */
-  .app {
-    padding-top: 64px; /* nav height + breathing room */
+  .app { padding-top: 64px; }
+  
+  /* Keep the active underline inside the navbar, not below it */
+  #navbar-portal-root .mobMenuWrapper ul.navBar li.active a::after {
+    top: auto !important;
+    bottom: 0 !important;
   }
   /* Keep right-side buttons aligned vertically centered */
   #navbar-portal-root .contact-us-btn,
