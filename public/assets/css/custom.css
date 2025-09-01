@@ -1275,7 +1275,7 @@ background: var(--gradients-blue-gradiant, linear-gradient(226deg, #00305B 0%, #
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 10px;
+    /* padding-top: 10px; */
 }
 
 .tabsec {

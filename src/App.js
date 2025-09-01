@@ -9,7 +9,7 @@ import Footerportal from "./components/common/Footer_Portal";
 import Home from "./components/portal/Home";  // Home stays eager
 
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet, useNavigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 // ✅ Lazy imports (all except Home)
 const Vas_Solution = lazy(() => import("./components/portal/Vas_Solution"));
@@ -61,6 +61,7 @@ const Milestoneswereached = lazy(() => import("./components/common/Milestoneswer
 // ✅ Layout wrapper
 const AppLayout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleAppClick = (e) => {
     const anchor = e.target.closest && e.target.closest('a');
@@ -135,7 +136,7 @@ const AppLayout = () => {
       <Suspense fallback={<ShimmerPage />}>
         <Outlet /> {/* child route renders here */}
       </Suspense>
-      <NeedHelp />
+      {location.pathname.toLowerCase() !== "/contactus" && <NeedHelp />}
       <Footerportal />
     </div>
   );

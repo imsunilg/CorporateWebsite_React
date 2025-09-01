@@ -83,7 +83,8 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
     display: none !important;
   }
   /* Offset page content so it doesn't sit under the fixed navbar */
-  .app { padding-top: 64px; }
+  /* Reduce content offset by 10px per request */
+  .app { padding-top: 54px; }
   
   /* Keep the active underline inside the navbar, not below it */
   #navbar-portal-root .mobMenuWrapper ul.navBar li.active a::after {
@@ -136,3 +137,18 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 
 /* Ensure first visible section never adds top margin */
 .app > *:first-child { margin-top: 0 !important; }
+
+/* Also strip top padding that creates a gap below the navbar */
+.app .banner-heading { padding-top: 0 !important; }
+.app > *:first-child,
+.app > *:first-child > *:first-child {
+  padding-top: 0 !important;
+}
+
+/* Common containers directly after nav should start flush */
+.app .content-container:first-child,
+.app .container:first-child,
+.app section:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
