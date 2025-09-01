@@ -13,7 +13,7 @@ return(
               </span>
               {/* <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span> */}
             </a>
-            <a href="javascript:void(0);" className="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <a href="#" onClick={(e) => e.preventDefault()} className="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
               <div style={{height: '30px', width: '30px'}} />
             </a>
           </div>
@@ -26,12 +26,12 @@ return(
               </a>
             </li>
             <li className="menu-item" style={{}}>
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
+              <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                 <div className="text-truncate" data-i18n="Users">Products</div>
               </a>
               <ul className="menu-sub">
                 <li className="menu-item" style={{}}>
-                  <a href="javascript:void(0);" className="menu-link menu-toggle">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                     <div className="text-truncate" data-i18n="View">Property</div>
                   </a>
                   <ul className="menu-sub">
@@ -77,7 +77,7 @@ return(
                   </ul>
                 </li>
                 <li className="menu-item" style={{}}>
-                  <a href="javascript:void(0);" className="menu-link menu-toggle">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                     <div className="text-truncate" data-i18n="View">Marine</div>
                   </a>
                   <ul className="menu-sub">
@@ -91,7 +91,7 @@ return(
                   </ul>
                 </li>
                 <li className="menu-item" style={{}}>
-                  <a href="javascript:void(0);" className="menu-link menu-toggle">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                     <div className="text-truncate" data-i18n="View">Liability</div>
                   </a>
                   <ul className="menu-sub">
@@ -126,7 +126,7 @@ return(
                   </ul>
                 </li>
                 <li className="menu-item" style={{}}>
-                  <a href="javascript:void(0);" className="menu-link menu-toggle">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                     <div className="text-truncate" data-i18n="View">Health</div>
                   </a>
                   <ul className="menu-sub">
@@ -147,7 +147,7 @@ return(
                   </ul>
                 </li>
                 <li className="menu-item" style={{}}>
-                  <a href="javascript:void(0);" className="menu-link menu-toggle">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                     <div className="text-truncate" data-i18n="View"> Engineering</div>
                   </a>
                   <ul className="menu-sub">
@@ -184,7 +184,7 @@ return(
               </ul>
             </li>
             <li className="menu-item" style={{}}>
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
+              <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                 <div className="text-truncate" data-i18n="Users">Risk Management</div>
               </a>
               <ul className="menu-sub">
@@ -216,7 +216,7 @@ return(
               </ul>
             </li>
             <li className="menu-item" style={{}}>
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
+              <a href="#" onClick={(e) => e.preventDefault()} className="menu-link menu-toggle">
                 <div className="text-truncate" data-i18n="Users">Claims</div>
               </a>
               <ul className="menu-sub">
@@ -287,13 +287,13 @@ return(
                       <a id="becomeAgent" className="sliding-link" href="/">Home</a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
+                      <a href="#" onClick={(e) => e.preventDefault()}>
                         Products
-                        <span className="dwnArrow" />
+                         <span className="dwnArrow" />
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu products-submenu">
                         <li>
-                          <a href="javascript:void(0)"><img src="../assets/images/assets.svg" className="mr-2" /> Property <span className="subarrow" /></a>
+                          <a href="#" onClick={(e) => e.preventDefault()}><img src="../assets/images/assets.svg" className="mr-2" /> Property <span className="subarrow" /></a>
                           <ul className="menuBox products-innermenu">
                             <li>
                               <a href="/Portal/Standard_Fire_and_Special_perils_policy">Standard Fire &amp; Special perils policy</a>
@@ -316,7 +316,7 @@ return(
                           </ul>
                         </li>
                         <li>
-                          <a href="javascript:void(0)"><img src="../assets/images/marine.svg" className="mr-2" /> Marine<span className="subarrow" /></a>
+                          <a href="#" onClick={(e) => e.preventDefault()}><img src="../assets/images/marine.svg" className="mr-2" /> Marine<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
                               <a href="/Portal/Marine_Inland_Open_Declaration_Policy">Marine Open Declaration Policy</a>
@@ -324,7 +324,7 @@ return(
                           </ul>
                         </li>
                         <li>
-                          <a href="javascript:void(0)"><img src="../assets/images/professional.svg" className="mr-2" /> Liability<span className="subarrow" /></a>
+                          <a href="#" onClick={(e) => e.preventDefault()}><img src="../assets/images/professional.svg" className="mr-2" /> Liability<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
                               <a href="/Portal/Comprehensive_General_Liability">Comprehensive General Liability</a>
@@ -341,7 +341,7 @@ return(
                           </ul>
                         </li>
                         <li>
-                          <a href="javascript:void(0)"><img src="../assets/images/healthcare.svg" className="mr-2" /> Health<span className="subarrow" /></a>
+                          <a href="#" onClick={(e) => e.preventDefault()}><img src="../assets/images/healthcare.svg" className="mr-2" /> Health<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
                               <a href="/Portal/Group_Health">Group Health</a>
@@ -352,7 +352,7 @@ return(
                           </ul>
                         </li>
                         <li>
-                          <a href="javascript:void(0)"><img src="../assets/images/engineering.svg" className="mr-2" /> Engineering<span className="subarrow" /></a>
+                          <a href="#" onClick={(e) => e.preventDefault()}><img src="../assets/images/engineering.svg" className="mr-2" /> Engineering<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
                               <a href="/Portal/Contractors_All_Risk">Contractor’s All Risk (CAR)</a>
@@ -371,9 +371,9 @@ return(
                       </ul>
                     </li>
                     <li className="risk-manage">
-                      <a href="javascript:void(0)">
+                      <a href="#" onClick={(e) => e.preventDefault()}>
                         Risk Management
-                        <span className="dwnArrow" />
+                         <span className="dwnArrow" />
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
@@ -394,9 +394,9 @@ return(
                       </ul>
                     </li>
                     <li className="risk-manage">
-                      <a href="javascript:void(0)">
+                      <a href="#" onClick={(e) => e.preventDefault()}>
                         Claims
-                        <span className="dwnArrow" />
+                         <span className="dwnArrow" />
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
@@ -485,7 +485,7 @@ return(
                           <div className="home-accordion-body">
                             <div className="dropdown-nav main-dropdown">
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Property">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Property">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/assets-mob.svg" className="mr-2" /> Property
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -495,7 +495,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Marine">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Marine">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/marine-mob.svg" className="mr-2" /> Marine
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -505,7 +505,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Liability">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Liability">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/liability-mob.svg" className="mr-2" /> Liability
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -517,7 +517,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Engineering">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Engineering">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/engineering-mob.svg" className="mr-2" /> Engineering
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -527,7 +527,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Health">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Health">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/health-mob.svg" className="mr-2" /> Health
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -607,7 +607,7 @@ return(
                           <div className="home-accordion-body">
                             <div className="dropdown-nav main-dropdown">
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Property">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Property">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/assets-mob.svg" className="mr-2" /> Property
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -617,7 +617,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Marine">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Marine">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/marine-mob.svg" className="mr-2" /> Marine
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -627,7 +627,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Liability">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Liability">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/liability-mob.svg" className="mr-2" /> Liability
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -639,7 +639,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Engineering">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Engineering">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/engineering-mob.svg" className="mr-2" /> Engineering
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -649,7 +649,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Health">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Health">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/health-mob.svg" className="mr-2" /> Health
                                     <img src="../assets/images/arrow-right.svg" alt="More arrow" className="more-arrow" />
@@ -724,7 +724,7 @@ return(
                           <div className="home-accordion-body">
                             <div className="dropdown-nav main-dropdown">
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Property">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Property">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/health-mob.svg" className="mr-2" /> Health
                                   </div>
@@ -732,7 +732,7 @@ return(
                                 </a>
                               </div>
                               <div className="dropdown-nav-option claim-content-child">
-                                <a href="JavaScript:;" className="dropdown-item" data-child-dropdown-item="Marine">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="dropdown-item" data-child-dropdown-item="Marine">
                                   <div className="d-flex property-wrapper-head">
                                     <img src="../assets/images/non-health-mob.svg" className="mr-2" /> Non-health
                                   </div>

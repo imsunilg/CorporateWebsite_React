@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import Navbarportal from "./components/common/Navbar_Portal";
+import ShimmerPage from "./components/common/ShimmerPage";
 import NeedHelp from "./components/common/NeedHelp";
 import Footerportal from "./components/common/Footer_Portal"; 
 import Home from "./components/Home";  // Home stays eager
@@ -131,7 +132,7 @@ const AppLayout = () => {
   return (
     <div className="app" onClick={handleAppClick}>
       <Navbarportal />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<ShimmerPage />}>
         <Outlet /> {/* child route renders here */}
       </Suspense>
       <NeedHelp />
