@@ -152,3 +152,16 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* =====================
+   User area (after login)
+   ===================== */
+.app-user { padding-top: 56px; }
+@media (min-width: 992px) {
+  .app-user { padding-top: 56px; }
+}
+.user-nav { height: 56px; }
+.user-nav .nav-link.active {
+  border-bottom: 3px solid #ec6625;
+}
+.user-nav .navbar-brand img { max-height: 40px; }

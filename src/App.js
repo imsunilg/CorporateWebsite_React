@@ -10,6 +10,7 @@ import Home from "./components/portal/Home";  // Home stays eager
 
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet, useNavigate, useLocation } from "react-router-dom";
+import userRoutes from "./userRoute";
 
 // ✅ Lazy imports (all except Home)
 const Vas_Solution = lazy(() => import("./components/portal/Vas_Solution"));
@@ -198,6 +199,7 @@ const appRouter = createBrowserRouter([
       { path: "/milestones", element: <Milestoneswereached /> },
     ],
   },
+  ...userRoutes,
 ]);
 
 // ✅ Render

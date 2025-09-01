@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 const CPTLoginMFA = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -6,6 +7,7 @@ const CPTLoginMFA = () => {
   const [errors, setErrors] = useState({});
   const [captchaCode, setCaptchaCode] = useState("");
   const toastRef = useRef(null);
+  const navigate = useNavigate();
 
   const generateCaptcha = () => {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // omit ambiguous chars
@@ -47,11 +49,14 @@ const CPTLoginMFA = () => {
     if (Object.keys(nextErrors).length) return;
 
     // TODO: integrate API call here
-    // Clear fields after successful validation
-    setUsername("");
-    setPassword("");
-    setCaptcha("");
-    generateCaptcha();
+    // Decide target based on device (mobile/tablet goes to mobile dashboard)
+    const isMobileOrTablet = (() => {
+      if (typeof window === 'undefined') return false;
+      const mq = window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
+      return mq;
+    })();
+    const to = isMobileOrTablet ? '/user/mdashboard' : '/user/dashboard';
+    navigate(to, { replace: true });
   };
 
   return (
