@@ -16,7 +16,7 @@ export default function MUserNavbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom user-nav">
       <div className="container">
-        <NavLink to="/user/mdashboard" className="navbar-brand">
+        <NavLink to="/muser/dashboard" className="navbar-brand">
           <img src="/assets/images/logo.svg" alt="ICICI Lombard" style={{ maxHeight: 36 }} />
         </NavLink>
 
@@ -34,17 +34,17 @@ export default function MUserNavbar() {
         <div className={`collapse navbar-collapse ${open ? "show" : ""}`} id="mUserNavbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink to="/user/mdashboard" className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>Home</NavLink>
+              <NavLink to="/muser/dashboard" className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/user/mdashboard?tab=policies" className={({ isActive }) => `nav-link`}>Policies</NavLink>
+              <NavLink to="/muser/dashboard?tab=policies" className={({ isActive }) => `nav-link`}>Policies</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/user/mdashboard?tab=claims" className={({ isActive }) => `nav-link`}>Claims</NavLink>
+              <NavLink to="/muser/dashboard?tab=claims" className={({ isActive }) => `nav-link`}>Claims</NavLink>
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item"><NavLink to="/user/mdashboard?tab=profile" className={({ isActive }) => `nav-link`}>Profile</NavLink></li>
+            <li className="nav-item"><NavLink to="/muser/dashboard?tab=profile" className={({ isActive }) => `nav-link`}>Profile</NavLink></li>
             <li className="nav-item"><button className="btn btn-sm btn-outline-primary ms-lg-2" type="button" onClick={logout}>Logout</button></li>
           </ul>
         </div>
@@ -52,4 +52,3 @@ export default function MUserNavbar() {
     </nav>
   );
 }
-

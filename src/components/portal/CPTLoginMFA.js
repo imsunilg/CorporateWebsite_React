@@ -10,7 +10,7 @@ const CPTLoginMFA = () => {
   const navigate = useNavigate();
 
   const generateCaptcha = () => {
-    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // omit ambiguous chars
+    const chars = "123456789"; // omit ambiguous chars ABCDEFGHJKLMNPQRSTUVWXYZ
     let code = "";
     for (let i = 0; i < 4; i++) code += chars[Math.floor(Math.random() * chars.length)];
     setCaptchaCode(code);
@@ -55,7 +55,7 @@ const CPTLoginMFA = () => {
       const mq = window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
       return mq;
     })();
-    const to = isMobileOrTablet ? '/user/mdashboard' : '/user/dashboard';
+    const to = isMobileOrTablet ? '/muser/dashboard' : '/user/dashboard';
     navigate(to, { replace: true });
   };
 
