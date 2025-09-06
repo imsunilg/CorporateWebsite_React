@@ -244,7 +244,7 @@ const Home = () => {
                   <div className="col-12">
                     <div className="counter-figure-wrapper">
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={2000}>â‚¹121.8B</h2>
+                        <h2 className="counter-numbers" data-number={2000}>121.8B</h2>
                         <p>Gross written Premium</p>
                         <img src="../assets/images/icons/lines.svg" className="img-fluid lines-graphics" alt="lines" />
                       </div>

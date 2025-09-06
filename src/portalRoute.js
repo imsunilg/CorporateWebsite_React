@@ -99,10 +99,12 @@ const PortalLayout = () => {
     }
   };
 
-  const hideNeedHelp = location.pathname.toLowerCase() === '/contactus';
+  const path = location.pathname.toLowerCase();
+  const isLogin = path === '/cptlogin';
+  const hideNeedHelp = path === '/contactus' || isLogin;
 
   return (
-    <div className="app" onClick={handleAppClick}>
+    <div className={`app${isLogin ? ' app-login' : ''}`} onClick={handleAppClick}>
       <Navbarportal />
       <Suspense fallback={<ShimmerPage />}>
         <Outlet />

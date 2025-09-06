@@ -297,6 +297,43 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   .faq-section { padding-bottom: 100px !important; }
 }
 
+/* Add breathing room between Need Help widget and the footer hero */
+.property-footer-wrapper {
+  margin-top: -32px; /* increased overlap under Need Help */
+}
+/* On login page, reset footer margin */
+.app-login .property-footer-wrapper { margin-top: 0 !important; }
+
+/* =====================
+   Need Help widget: close + reopen toggle
+   ===================== */
+.need-help-wrapper { position: relative; z-index: 3; }
+.need-help-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.need-help-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1200;
+  background: #ec6625;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 /* =====================
    Home: Awards & Accolades (milestone) slider
    ===================== */
