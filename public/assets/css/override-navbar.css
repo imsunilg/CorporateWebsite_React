@@ -219,6 +219,9 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 /* =====================
    Section Leader layout (match section-we-offer)
    ===================== */
+.industry-list-dropdown .dropdown-menu {
+  margin-left: 32px !important; /* shift popup to the right to clear edge */
+}
 .section-leader {
   padding-bottom: 20px;
   border-radius: var(--radius-24);

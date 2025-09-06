@@ -170,8 +170,8 @@ const Home = () => {
                           Industry List
                           <img src="../assets/images/icons/white-down-arrow.svg" className="img-fluid" alt="Dropdown arrow" />
                         </button>
-                        <div className="nav flex-column nav-pills me-3 nav-shadow m-l-m29 p-l-30 bg-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                          <div className="dropdown-menu pl-3 text-left" style={{marginLeft: '3% !important'}}>
+                        <div className="nav flex-column nav-pills me-3 nav-shadow p-l-30 bg-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                          <div className="dropdown-menu pl-3 text-left" style={{ marginLeft: '16px' }}>
                             <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab1" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)}>Pharmaceuticals</a>
                             <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>Construction &amp; Infrastructure</a>
                             <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)}>IT/ITES</a>
