@@ -324,3 +324,33 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   padding: 6px 10px;
   cursor: pointer;
 }
+
+/* =====================
+   Home: Map section two-up columns
+   ===================== */
+@media (min-width: 992px) {
+  .map-wrapper .visit-us-wrapper,
+  .map-wrapper .contact-us-wrapper {
+    min-width: 0 !important; /* allow to fit within Bootstrap cols */
+    width: 100% !important;
+    /* add side breathing room so cards don't touch */
+    margin: 26px 12px 0 12px !important;
+    align-items: center; /* vertically center contents */
+  }
+  /* add a consistent gap between the two columns */
+  .map-wrapper .row { gap: 24px; }
+}
+
+/* Keep CTA labels on one line and centered */
+.map-wrapper .contact-us {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-wrapper .visit-us-wrapper .right,
+.map-wrapper .contact-us-wrapper .right {
+  display: flex;
+  align-items: center; /* vertically center the button */
+  margin-left: auto;   /* push button to the far right of the card */
+}
