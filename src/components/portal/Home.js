@@ -124,7 +124,7 @@ const Home = () => {
             </section>
             {/* banner end */}
             {/* section we offer starts */}
-            <section className="section-we-offer">
+            <section id="section-we-offer" className="section-we-offer">
               <div className="container">
                 <div className="section-wrapper">
                   <div className="section-we-offer-content text-center">
@@ -142,18 +142,18 @@ const Home = () => {
                 </div>
               </div>
             </section>
-            <section className="section-we-offer orange-g-bg orange-bar">
+            <section id="section-leader" className="section-leader orange-g-bg orange-bar">
               <div className="container">
                 <div className="section-wrapper">
-                  <div className="section-we-offer-content text-center">
+                  <div className="section-leader-content text-center">
                     <h2 className="font-25">#1</h2>
                     <p>Market leader in Marine Cargo and Liability </p>
                   </div>
-                  <div className="section-we-offer-content text-center">
+                  <div className="section-leader-content text-center">
                     <h2 className="font-25">2nd</h2>
                     <p>Largest player in Fire<br />&amp; Engineering line of business</p>
                   </div>
-                  <div className="section-we-offer-content text-center">
+                  <div className="section-leader-content text-center">
                     <h2 className="font-25">3500+</h2>
                     <p>Corporate Customers</p>
                   </div>

@@ -216,6 +216,31 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   .app .banner .banner-caption .slider-dots { display: none !important; }
 }
 
+/* =====================
+   Section Leader layout (match section-we-offer)
+   ===================== */
+.section-leader {
+  padding-bottom: 20px;
+  border-radius: var(--radius-24);
+}
+.section-leader .section-wrapper {
+  max-width: 100%;
+  width: 1050px;
+  padding-top: 46px;
+  padding-bottom: 60px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.section-leader .section-wrapper .section-leader-content {
+  margin-right: 44px;
+  max-width: 336px;
+}
+.section-leader .section-wrapper .section-leader-content:last-child { margin: 0; }
+/* force white text in leader tiles */
+.section-leader .section-leader-content h2,
+.section-leader .section-leader-content p { color: #fff; }
+
 /* Banner radius: ensure slick structure clips to rounded corners */
 .app .banner .banner-slider {
   border-radius: 10px;
