@@ -277,3 +277,11 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   border-bottom: 3px solid #ec6625;
 }
 .user-nav .navbar-brand img { max-height: 40px; }
+
+/* =====================
+   Home: Employee Speak spacing
+   ===================== */
+.our-case-studies-main .case-studies-content-wrapper.p-t-20f {
+  padding-top: 32px !important; /* increase from default 20px */
+  margin-top: 12px;              /* add breathing room from section edge */
+}
