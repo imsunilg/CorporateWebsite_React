@@ -1,6 +1,5 @@
 import React from "react";
-
- import NeedHelp from "../common/NeedHelp";
+ 
  import Navbarportal from "../common/Navbar_Portal";
  import Footerportal from "../common/Footer_Portal";
 
@@ -212,10 +211,7 @@ const Anywhere_Cashless = () => {
             </div>
           </div>
         </section>
-        <div >
-            <NeedHelp/>
-    
-        </div>
+       
         {/* end */}
         {/* end section */}
         {/* end-section */}

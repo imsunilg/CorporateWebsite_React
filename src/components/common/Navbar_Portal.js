@@ -42,6 +42,7 @@ const Navbarportal = () => {
         'IFSC_Insurance_Office': '/ifsc-office',
         'India_risk_report': '/india-risk-report',
         'Vas_Solution': '/vas-solution',
+        'risk_liability': '/risk-health',
         'risk_Engineering': '/risk-engineering',
         'risk_Health': '/risk-health',
       };
@@ -146,43 +147,43 @@ const Navbarportal = () => {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Standard_Fire_and_Special_perils_policy" className="menu-link">
+                      <Link to="/standard-fire" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Standard Fire &amp; Special perils
                           policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Industrial_All_Risk_policy" className="menu-link">
+                      <Link to="/industrial-risk" className="menu-link">
                         <div className="text-truncate" data-i18n="Security">Industrial All Risk policy</div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Mega_Risk_policy" className="menu-link">
+                      <Link to="/mega-risk" className="menu-link">
                         <div className="text-truncate" data-i18n="Billing & Plans">Mega Risk policy</div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy" className="menu-link">
+                      <Link to="/sookshma-udyam" className="menu-link">
                         <div className="text-truncate" data-i18n="Notifications">
                           ICICI Bharat Sookshma Udyam
                           Suraksha Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy" className="menu-link">
+                      <Link to="/laghu-udyam" className="menu-link">
                         <div className="text-truncate" data-i18n="Connections">
                           ICICI Bharat Laghu Udyam
                           Suraksha Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/ICICI_Bharat_Griha_Raksha_Policy" className="menu-link">
+                      <Link to="/griha-raksha" className="menu-link">
                         <div className="text-truncate" data-i18n="Connections">ICICI Bharat Griha Raksha Policy</div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -192,11 +193,11 @@ const Navbarportal = () => {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Marine_Inland_Open_Declaration_Policy" className="menu-link">
+                      <Link to="/marine-inland" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Marine Open Declaration Policy
                         </div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -206,32 +207,32 @@ const Navbarportal = () => {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Comprehensive_General_Liability" className="menu-link">
+                      <Link to="/general-liability" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Comprehensive General Liability
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Directors_and_Officers_Liability" className="menu-link">
+                      <Link to="/directors-liability" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Directors and Officers Liability
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Cyber_Risk_Insurance" className="menu-link">
+                      <Link to="/cyber-risk" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Cyber Risk Insurance
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Professional_Indemnity" className="menu-link">
+                      <Link to="/professional-indemnity" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Professional Indemnity
                         </div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -241,18 +242,18 @@ const Navbarportal = () => {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a href="/Portal/Group_Health" className="menu-link">
+                      <Link to="/group-health" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Group Health
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item">
-                      <a href="/Portal/Group_Personal_Accident" className="menu-link">
+                      <Link to="/group-accident" className="menu-link">
                         <div className="text-truncate" data-i18n="Account">
                           Group Personal Accident
                         </div>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -299,29 +300,29 @@ const Navbarportal = () => {
               </a>
               <ul className="menu-sub">
                 <li className="menu-item">
-                  <a href="/Portal/Property_Loss_Prevention_exercise" className="menu-link">
+                  <Link to="/property-loss-prevention" className="menu-link">
                     <div className="text-truncate" data-i18n="List">Property</div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item">
-                  <a href="/Portal/Vas_Solution" className="menu-link">
+                  <Link to="/vas-solution" className="menu-link">
                     <div className="text-truncate" data-i18n="List">Marine</div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item">
-                  <a href="/Portal/risk_liability" className="menu-link">
+                  <Link to="/risk-health" className="menu-link">
                     <div className="text-truncate" data-i18n="List">Liability</div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item">
-                  <a href="/Portal/risk_Health" className="menu-link">
+                  <Link to="/risk-health" className="menu-link">
                     <div className="text-truncate" data-i18n="List">Health</div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item">
-                  <a href="/Portal/risk_Engineering" className="menu-link">
+                  <Link to="/risk-engineering" className="menu-link">
                     <div className="text-truncate" data-i18n="List">Engineering</div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -358,9 +359,9 @@ const Navbarportal = () => {
               </ul>
             </li>
             <li className="menu-item">
-              <a href="/Portal/digital_solutions" className="menu-link">
+              <Link to="/digital-solutions" className="menu-link">
                 <div data-i18n="Email">Digital Solutions</div>
-              </a>
+              </Link>
             </li>
             <li className="menu-item other-menu">
               <Link to="ContactUs" className="menu-link"> 
@@ -368,7 +369,7 @@ const Navbarportal = () => {
              </Link> 
             </li>
             <li className="menu-item other-menu"> 
-              <a href="/Portal/CPTLogin" className="menu-link"> <div data-i18n="Email">Login</div></a> 
+              <Link to="/CPTLogin" className="menu-link"> <div data-i18n="Email">Login</div></Link> 
             </li>
           </ul>
         </aside>
@@ -393,7 +394,7 @@ const Navbarportal = () => {
               <div className="navbar-collapse" id="navbarNav">
                 <div className="mobMenuWrapper" id="mobMenu">
                   <ul className="navBar">
-                    <li>
+                    <li className="noSub">
                      <Link id="becomeAgent" className="sliding-link" to="/">  Home</Link>
                     </li>
                     <li>
@@ -406,22 +407,22 @@ const Navbarportal = () => {
                           <a href="#" onClick={(e) => e.preventDefault()}><img src="/assets/images/assets.svg" className="mr-2" /> Property <span className="subarrow" /></a>
                           <ul className="menuBox products-innermenu">
                             <li>
-                              <a href="/Portal/Standard_Fire_and_Special_perils_policy">Standard Fire &amp; Special perils policy</a>
+                              <Link to="/standard-fire">Standard Fire &amp; Special perils policy</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Industrial_All_Risk_policy">Industrial All Risk policy</a>
+                              <Link to="/industrial-risk">Industrial All Risk policy</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Mega_Risk_policy">Mega Risk policy</a>
+                              <Link to="/mega-risk">Mega Risk policy</Link>
                             </li>
                             <li>
-                              <a href="/Portal/ICICI_Bharat_Sookshma_Udyam_Surakha_Policy">ICICI Bharat Sookshma Udyam Suraksha Policy</a>
+                              <Link to="/sookshma-udyam">ICICI Bharat Sookshma Udyam Suraksha Policy</Link>
                             </li>
                             <li>
-                              <a href="/Portal/ICICI_Bharat_LaGhu_Udyam_Suraksha_Policy">ICICI Bharat Laghu Udyam Suraksha Policy</a>
+                              <Link to="/laghu-udyam">ICICI Bharat Laghu Udyam Suraksha Policy</Link>
                             </li>
                             <li>
-                              <a href="/Portal/ICICI_Bharat_Griha_Raksha_Policy">ICICI Bharat Griha Raksha Policy</a>
+                              <Link to="/griha-raksha">ICICI Bharat Griha Raksha Policy</Link>
                             </li>
                           </ul>
                         </li>
@@ -429,7 +430,7 @@ const Navbarportal = () => {
                           <a href="#" onClick={(e) => e.preventDefault()}><img src="/assets/images/marine.svg" className="mr-2" /> Marine<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
-                              <a href="/Portal/Marine_Inland_Open_Declaration_Policy">Marine Open Declaration Policy</a>
+                              <Link to="/marine-inland">Marine Open Declaration Policy</Link>
                             </li>
                           </ul>
                         </li>
@@ -437,16 +438,16 @@ const Navbarportal = () => {
                           <a href="#" onClick={(e) => e.preventDefault()}><img src="/assets/images/professional.svg" className="mr-2" /> Liability<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
-                              <a href="/Portal/Comprehensive_General_Liability">Comprehensive General Liability</a>
+                              <Link to="/general-liability">Comprehensive General Liability</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Directors_and_Officers_Liability">Directors and Officers Liability</a>
+                              <Link to="/directors-liability">Directors and Officers Liability</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Cyber_Risk_Insurance">Cyber Risk Insurance</a>
+                              <Link to="/cyber-risk">Cyber Risk Insurance</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Professional_Indemnity">Professional Indemnity</a>
+                              <Link to="/professional-indemnity">Professional Indemnity</Link>
                             </li>
                           </ul>
                         </li>
@@ -454,10 +455,10 @@ const Navbarportal = () => {
                           <a href="#" onClick={(e) => e.preventDefault()}><img src="/assets/images/healthcare.svg" className="mr-2" /> Health<span className="subarrow" /></a>
                           <ul className="menuBox">
                             <li>
-                              <a href="/Portal/Group_Health">Group Health</a>
+                              <Link to="/group-health">Group Health</Link>
                             </li>
                             <li>
-                              <a href="/Portal/Group_Personal_Accident">Group Personal Accident</a>
+                              <Link to="/group-accident">Group Personal Accident</Link>
                             </li>
                           </ul>
                         </li>
@@ -487,19 +488,19 @@ const Navbarportal = () => {
                       </a>
                       <ul className="innerlinks menuBox otherdrMenu riskmanage-submenu">
                         <li>
-                          <a href="/Portal/Property_Loss_Prevention_exercise"><img src="/assets/images/assets.svg" className="mr-2" />Property</a>
+                          <Link to="/property-loss-prevention"><img src="/assets/images/assets.svg" className="mr-2" />Property</Link>
                         </li>
                         <li>
-                          <a href="/Portal/Vas_Solution"><img src="/assets/images/marine.svg" className="mr-2" /> Marine</a>
+                          <Link to="/vas-solution"><img src="/assets/images/marine.svg" className="mr-2" /> Marine</Link>
                         </li>
                         <li>
-                          <a href="/Portal/risk_liability"><img src="/assets/images/professional.svg" className="mr-2" /> Liability</a>
+                          <Link to="/risk-health"><img src="/assets/images/professional.svg" className="mr-2" /> Liability</Link>
                         </li>
                         <li>
-                          <a href="/Portal/risk_Health"><img src="/assets/images/healthcare.svg" className="mr-2" /> Health</a>
+                          <Link to="/risk-health"><img src="/assets/images/healthcare.svg" className="mr-2" /> Health</Link>
                         </li>
                         <li>
-                          <a href="/Portal/risk_Engineering"><img src="/assets/images/engineering.svg" className="mr-2" /> Engineering</a>
+                          <Link to="/risk-engineering"><img src="/assets/images/engineering.svg" className="mr-2" /> Engineering</Link>
                         </li>
                       </ul>
                     </li>
@@ -536,8 +537,8 @@ const Navbarportal = () => {
                         </li>
                       </ul>
                     </li>
-                    <li>
-                      <a id="becomeAgent" className="sliding-link" href="/Portal/digital_solutions">Digital Solutions</a>
+                    <li className="noSub">
+                      <Link id="becomeAgent" className="sliding-link" to="/digital-solutions">Digital Solutions</Link>
                     </li>
                   </ul>
                 </div>
@@ -555,7 +556,7 @@ const Navbarportal = () => {
                 </div>
                 <div className="category-list">
                   <ul>
-                    <li><a href="/Portal/Explore1">Blogs</a></li>
+                    <li><Link to="/explore1">Blogs</Link></li>
                     <li><a href="#">Announcements</a></li>
                     <li><a href="https://www.icicilombard.com/about-us" target="_blank">About Us</a></li>
                     <li><a href="#">Awards and Accolades</a></li>
@@ -859,17 +860,17 @@ const Navbarportal = () => {
                   </div>
                 </div>
                 <div className="d-flex flex-row align-content-center">
-                 <Link to="ContactUs" className="btn contact-btn-mob">
+                 <Link to="/ContactUs" className="btn contact-btn-mob">
   Contact Us
 </Link>
-                  <a href="/Portal/CPTLogin" className="btn login-btn-mob ml-3">Login</a>
+                  <Link to="/CPTLogin" className="btn login-btn-mob ml-3">Login</Link>
                 </div>
                 <div className="category-list">
                   <ul>
-                    <li><a href="/Portal/Employee_Speak">Blogs</a></li>
+                    <li><Link to="/employee-speak">Blogs</Link></li>
                     <li><a href="#">Announcements</a></li>
                     <li><a href="https://www.icicilombard.com/about-us" target="_blank">About Us</a></li>
-                    <li><a href="/Portal/Home%2523Awards">Awards and Accolades</a></li>
+                    <li><Link to="/home#Awards">Awards and Accolades</Link></li>
                   </ul>
                 </div>
               </div>

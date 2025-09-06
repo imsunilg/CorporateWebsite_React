@@ -1,5 +1,6 @@
 // src/components/Footer.js
 import React from "react"; 
+import { Link } from "react-router-dom";
 
 const Footerportal = () => {
   return (
@@ -99,25 +100,25 @@ const Footerportal = () => {
                 <h5>Products</h5>
                 <ul>
                   <li>
-                    <a href="/Portal/Standard_Fire_and_Special_perils_policy">
+                    <Link to="/standard-fire">
                       Property
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/Portal/Marine_Inland_Open_Declaration_Policy">
+                    <Link to="/marine-inland">
                       Marine
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/Portal/Comprehensive_General_Liability">
+                    <Link to="/general-liability">
                       Liability
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/Portal/Contractors_All_Risk">Engineering</a>
+                    <Link to="/contractors-risk">Engineering</Link>
                   </li>
                   <li>
-                    <a href="/Portal/Group_Health">Group Health</a>
+                    <Link to="/group-health">Group Health</Link>
                   </li>
                   <li>
                     <a
@@ -154,24 +155,24 @@ const Footerportal = () => {
                 <h5>Explore</h5>
                 <ul>
                   <li>
-                    <a href="/Portal/Home">Website Home</a>
+                    <Link to="/home">Website Home</Link>
                   </li>
                   <li>
-                    <a href="/Portal/Property_Loss_Prevention_exercise">
+                    <Link to="/property-loss-prevention">
                       Property services
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/Portal/Vas_Solution">Marine Services</a>
+                    <Link to="/vas-solution">Marine Services</Link>
                   </li>
                   <li>
-                    <a href="/Portal/risk_Health">Group Health Services</a>
+                    <Link to="/risk-health">Group Health Services</Link>
                   </li>
                   <li>
-                    <a href="/Portal/risk_Engineering">Engineering services</a>
+                    <Link to="/risk-engineering">Engineering services</Link>
                   </li>
                   <li>
-                    <a href="/Portal/risk_liability">Liability Services</a>
+                    <Link to="/risk-health">Liability Services</Link>
                   </li>
                 </ul>
               </div>

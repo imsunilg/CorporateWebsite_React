@@ -91,6 +91,18 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
     top: auto !important;
     bottom: 0 !important;
   }
+  /* Remove duplicate hover underline so only the active one remains */
+  #navbar-portal-root .mobMenuWrapper ul.navBar li:hover:after {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+  }
+  /* Do not show underline for simple links like Home and Digital Solutions */
+  #navbar-portal-root .mobMenuWrapper ul.navBar li.noSub a::after {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+  }
   /* Keep right-side buttons aligned vertically centered */
   #navbar-portal-root .contact-us-btn,
   #navbar-portal-root .login-btn {
@@ -152,6 +164,13 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* Home banner slider: show one slide at a time and add spacing */
+.app .banner .banner-heading { margin: 16px 0 12px 0 !important; position: relative; z-index: 1; }
+.app .banner .banner-slider { margin-top: 8px; }
+.app .banner .banner-slider { position: relative; }
+.app .banner .banner-slider .banner-slide { display: none; }
+.app .banner .banner-slider .banner-slide.is-active { display: block; }
 
 /* =====================
    User area (after login)

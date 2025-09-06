@@ -88,6 +88,7 @@ const PortalLayout = () => {
         'IFSC_Insurance_Office': '/ifsc-office',
         'India_risk_report': '/india-risk-report',
         'Vas_Solution': '/vas-solution',
+        'risk_liability': '/risk-health',
         'risk_Engineering': '/risk-engineering',
         'risk_Health': '/risk-health',
       };

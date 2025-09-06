@@ -1,7 +1,20 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import react from "react";
-const Home=()=>{
-return(
+const Home = () => {
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % 4);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+  const nextSlide = () => setActive((prev) => (prev + 1) % 4);
+  const onSliderClick = (e) => {
+    const anchor = e.target.closest && e.target.closest('a');
+    if (anchor) return; // don't interfere with link clicks
+    nextSlide();
+  };
+  return(
  
       <div>
     
@@ -9,13 +22,13 @@ return(
           <div className="content-container" style={{marginTop: '0px'}}>
             {/* banner starts */}
             <div className="container banner">
-              <div className="banner-heading" style={{marginTop: '70px'}}>
+              <div className="banner-heading">
                 <h1>
                   Your business deserves a partner in risk management, stay a step ahead with us
                 </h1>
               </div>
-              <div className="banner-slider" id="bannerSlider">
-                <div className="banner-slide">
+              <div className="banner-slider" id="bannerSlider" onClick={onSliderClick}>
+                <div className={`banner-slide ${active === 0 ? 'is-active' : ''}`}>
                   <img src="../assets/images/Indian-Risk-Report-mob.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/Indian-Risk-Report-web.jpg" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
@@ -25,7 +38,7 @@ return(
                     <a href="https://www.icicilombard.com/docs/default-source/default-document-library/icici-lombard-irm-india-risk-report-2024-edition-2-0.pdf" className="btn cash-mobile">Click Here</a>
                   </div>
                 </div>
-                <div className="banner-slide">
+                <div className={`banner-slide ${active === 1 ? 'is-active' : ''}`}>
                   <img src="../assets/images/silder-img-1.jpg" className="d-none d-md-block img-fluid" alt="Slide 1" />
                   <img src="../assets/images/silder-img-mob-1.png" className="d-block d-md-none w-100" alt="Slide 1" />
                   <div className="banner-caption">
@@ -34,7 +47,7 @@ return(
                     <Link to="/award" className="btn know-more-btn irma-know-mob">Know More</Link>
                   </div>
                 </div>
-                <div className="banner-slide">
+                <div className={`banner-slide ${active === 2 ? 'is-active' : ''}`}>
                   <img style={{filter: 'brightness(95%)'}} src="../assets/images/silder-img-3.jpg" className="d-none d-md-block img-fluid" alt="Slide 1" height="400px;" />
                   <img src="../assets/images/silder-img-mob-3.png" className="d-block d-md-none w-100" alt="Slide 1" />
                   <div className="banner-caption">
@@ -43,7 +56,7 @@ return(
                     <Link to="/ifsc-office" className="btn know-more-btn lastBtn">Know More</Link>
                   </div>
                 </div>
-                <div className="banner-slide">
+                <div className={`banner-slide ${active === 3 ? 'is-active' : ''}`}>
                   <img src="../assets/images/cashless-banner.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/anywhere-cashless-mobile.png" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
