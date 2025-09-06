@@ -14,6 +14,10 @@ const Home = () => {
     if (anchor) return; // don't interfere with link clicks
     nextSlide();
   };
+  const onDotClick = (idx, e) => {
+    if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+    setActive(idx);
+  };
   return(
  
       <div>
@@ -26,41 +30,114 @@ const Home = () => {
                 <h1>
                   Your business deserves a partner in risk management, stay a step ahead with us
                 </h1>
+                {/* slider controls moved under know-more button */}
               </div>
               <div className="banner-slider" id="bannerSlider" onClick={onSliderClick}>
-                <div className={`banner-slide ${active === 0 ? 'is-active' : ''}`}>
+                <div id="banner-slide-1" className={`banner-slide ${active === 0 ? 'is-active' : ''}`}>
                   <img src="../assets/images/Indian-Risk-Report-mob.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/Indian-Risk-Report-web.jpg" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
                     <Link className="btn know-more-btn" to="/india-risk-report">Know More</Link>
+                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
+                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
+                        className={`slider-dot ${active===0 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(0,e)}
+                        title="Slide 1" />
+                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
+                        className={`slider-dot ${active===1 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(1,e)}
+                        title="Slide 2" />
+                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
+                        className={`slider-dot ${active===2 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(2,e)}
+                        title="Slide 3" />
+                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
+                        className={`slider-dot ${active===3 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(3,e)}
+                        title="Slide 4" />
+                    </div>
                   </div>
                   <div>
                     <a href="https://www.icicilombard.com/docs/default-source/default-document-library/icici-lombard-irm-india-risk-report-2024-edition-2-0.pdf" className="btn cash-mobile">Click Here</a>
                   </div>
                 </div>
-                <div className={`banner-slide ${active === 1 ? 'is-active' : ''}`}>
+                <div id="banner-slide-2" className={`banner-slide ${active === 1 ? 'is-active' : ''}`}>
                   <img src="../assets/images/silder-img-1.jpg" className="d-none d-md-block img-fluid" alt="Slide 1" />
                   <img src="../assets/images/silder-img-mob-1.png" className="d-block d-md-none w-100" alt="Slide 1" />
                   <div className="banner-caption">
                     <h5>India Risk Management Awards 2023-2024</h5>
                     <p>Each year, we honor exceptional risk takers in the field of risk management</p>
                     <Link to="/award" className="btn know-more-btn irma-know-mob">Know More</Link>
+                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
+                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
+                        className={`slider-dot ${active===0 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(0,e)}
+                        title="Slide 1" />
+                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
+                        className={`slider-dot ${active===1 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(1,e)}
+                        title="Slide 2" />
+                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
+                        className={`slider-dot ${active===2 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(2,e)}
+                        title="Slide 3" />
+                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
+                        className={`slider-dot ${active===3 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(3,e)}
+                        title="Slide 4" />
+                    </div>
                   </div>
                 </div>
-                <div className={`banner-slide ${active === 2 ? 'is-active' : ''}`}>
+                <div id="banner-slide-3" className={`banner-slide ${active === 2 ? 'is-active' : ''}`}>
                   <img style={{filter: 'brightness(95%)'}} src="../assets/images/silder-img-3.jpg" className="d-none d-md-block img-fluid" alt="Slide 1" height="400px;" />
                   <img src="../assets/images/silder-img-mob-3.png" className="d-block d-md-none w-100" alt="Slide 1" />
                   <div className="banner-caption">
                     <h5>Unlocking new opportunities – ICICI Lombard IIO</h5>
                     <p>India’s first Financial Services SEZ dedicated to development and export of financial services in and from India</p>
                     <Link to="/ifsc-office" className="btn know-more-btn lastBtn">Know More</Link>
+                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
+                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
+                        className={`slider-dot ${active===0 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(0,e)}
+                        title="Slide 1" />
+                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
+                        className={`slider-dot ${active===1 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(1,e)}
+                        title="Slide 2" />
+                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
+                        className={`slider-dot ${active===2 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(2,e)}
+                        title="Slide 3" />
+                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
+                        className={`slider-dot ${active===3 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(3,e)}
+                        title="Slide 4" />
+                    </div>
                   </div>
                 </div>
-                <div className={`banner-slide ${active === 3 ? 'is-active' : ''}`}>
+                <div id="banner-slide-4" className={`banner-slide ${active === 3 ? 'is-active' : ''}`}>
                   <img src="../assets/images/cashless-banner.jpg" className="d-none d-md-block img-fluid" alt="Slide 3" />
                   <img src="../assets/images/anywhere-cashless-mobile.png" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
                     <Link to="/cashless" className="btn know-more-btn cash-mob">Know More</Link>
+                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
+                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
+                        className={`slider-dot ${active===0 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(0,e)}
+                        title="Slide 1" />
+                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
+                        className={`slider-dot ${active===1 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(1,e)}
+                        title="Slide 2" />
+                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
+                        className={`slider-dot ${active===2 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(2,e)}
+                        title="Slide 3" />
+                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
+                        className={`slider-dot ${active===3 ? 'active' : ''}`}
+                        onClick={(e)=>onDotClick(3,e)}
+                        title="Slide 4" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -71,33 +148,31 @@ const Home = () => {
                   <div className="col-12">
                     <div className="counter-figure-wrapper">
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={2000}>₹71.06B</h2>
+                        <h2 className="counter-numbers" data-number={2000}>₹121.8B</h2>
                         <p>Gross written Premium</p>
                         <img src="../assets/images/icons/lines.svg" className="img-fluid lines-graphics" alt="lines" />
                       </div>
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={6000}>92.1%</h2>
+                        <h2 className="counter-numbers" data-number={6000}>86%</h2>
                         <p>Claim Settlement</p>
                         <img src="../assets/images/icons/lines.svg" className="img-fluid lines-graphics" alt="lines" />
                       </div>
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={3000}>13.6%</h2>
+                        <h2 className="counter-numbers" data-number={3000}>11.1%</h2>
                         <p>Market Share</p>
                         <img src="../assets/images/icons/lines.svg" className="img-fluid lines-graphics" alt="lines" />
                       </div>
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={3000}>20K+</h2>
+                        <h2 className="counter-numbers" data-number={3000}>25K+</h2>
                         <p>Customers</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="figure-year">
-                  <p>Numbers are for FY 2023-24 for Commercial lines business</p>
+                  <p>Numbers are for FY 2024-25 for Commercial lines business</p>
                 </div>
-                {/*<div class="industry-growth">
-            <p>Figures are for FY 2022-23</p>
-            </div>*/}
+             
               </div>
             </section>
             {/* banner end */}
