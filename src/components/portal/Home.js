@@ -38,24 +38,6 @@ const Home = () => {
                   <img src="../assets/images/Indian-Risk-Report-web.jpg" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
                     <Link className="btn know-more-btn" to="/india-risk-report">Know More</Link>
-                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
-                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
-                        className={`slider-dot ${active===0 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(0,e)}
-                        title="Slide 1" />
-                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
-                        className={`slider-dot ${active===1 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(1,e)}
-                        title="Slide 2" />
-                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
-                        className={`slider-dot ${active===2 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(2,e)}
-                        title="Slide 3" />
-                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
-                        className={`slider-dot ${active===3 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(3,e)}
-                        title="Slide 4" />
-                    </div>
                   </div>
                   <div>
                     <a href="https://www.icicilombard.com/docs/default-source/default-document-library/icici-lombard-irm-india-risk-report-2024-edition-2-0.pdf" className="btn cash-mobile">Click Here</a>
@@ -68,24 +50,6 @@ const Home = () => {
                     <h5>India Risk Management Awards 2023-2024</h5>
                     <p>Each year, we honor exceptional risk takers in the field of risk management</p>
                     <Link to="/award" className="btn know-more-btn irma-know-mob">Know More</Link>
-                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
-                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
-                        className={`slider-dot ${active===0 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(0,e)}
-                        title="Slide 1" />
-                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
-                        className={`slider-dot ${active===1 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(1,e)}
-                        title="Slide 2" />
-                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
-                        className={`slider-dot ${active===2 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(2,e)}
-                        title="Slide 3" />
-                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
-                        className={`slider-dot ${active===3 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(3,e)}
-                        title="Slide 4" />
-                    </div>
                   </div>
                 </div>
                 <div id="banner-slide-3" className={`banner-slide ${active === 2 ? 'is-active' : ''}`}>
@@ -95,24 +59,6 @@ const Home = () => {
                     <h5>Unlocking new opportunities – ICICI Lombard IIO</h5>
                     <p>India’s first Financial Services SEZ dedicated to development and export of financial services in and from India</p>
                     <Link to="/ifsc-office" className="btn know-more-btn lastBtn">Know More</Link>
-                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
-                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
-                        className={`slider-dot ${active===0 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(0,e)}
-                        title="Slide 1" />
-                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
-                        className={`slider-dot ${active===1 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(1,e)}
-                        title="Slide 2" />
-                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
-                        className={`slider-dot ${active===2 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(2,e)}
-                        title="Slide 3" />
-                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
-                        className={`slider-dot ${active===3 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(3,e)}
-                        title="Slide 4" />
-                    </div>
                   </div>
                 </div>
                 <div id="banner-slide-4" className={`banner-slide ${active === 3 ? 'is-active' : ''}`}>
@@ -120,25 +66,26 @@ const Home = () => {
                   <img src="../assets/images/anywhere-cashless-mobile.png" className="d-block d-md-none w-100" alt="Slide 3" />
                   <div className="banner-caption thirdBtnSize">
                     <Link to="/cashless" className="btn know-more-btn cash-mob">Know More</Link>
-                    <div className="slider-dots" role="tablist" aria-label="Hero banners">
-                      <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
-                        className={`slider-dot ${active===0 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(0,e)}
-                        title="Slide 1" />
-                      <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
-                        className={`slider-dot ${active===1 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(1,e)}
-                        title="Slide 2" />
-                      <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
-                        className={`slider-dot ${active===2 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(2,e)}
-                        title="Slide 3" />
-                      <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
-                        className={`slider-dot ${active===3 ? 'active' : ''}`}
-                        onClick={(e)=>onDotClick(3,e)}
-                        title="Slide 4" />
-                    </div>
                   </div>
+                </div>
+                {/* bottom slider controls (desktop) */}
+                <div className="slider-dots" role="tablist" aria-label="Hero banners">
+                  <button id="slick-slide-control00" type="button" role="tab" aria-controls="banner-slide-1" aria-selected={active===0}
+                    className={`slider-dot ${active===0 ? 'active' : ''}`}
+                    onClick={(e)=>onDotClick(0,e)}
+                    title="Slide 1" />
+                  <button id="slick-slide-control01" type="button" role="tab" aria-controls="banner-slide-2" aria-selected={active===1}
+                    className={`slider-dot ${active===1 ? 'active' : ''}`}
+                    onClick={(e)=>onDotClick(1,e)}
+                    title="Slide 2" />
+                  <button id="slick-slide-control02" type="button" role="tab" aria-controls="banner-slide-3" aria-selected={active===2}
+                    className={`slider-dot ${active===2 ? 'active' : ''}`}
+                    onClick={(e)=>onDotClick(2,e)}
+                    title="Slide 3" />
+                  <button id="slick-slide-control03" type="button" role="tab" aria-controls="banner-slide-4" aria-selected={active===3}
+                    className={`slider-dot ${active===3 ? 'active' : ''}`}
+                    onClick={(e)=>onDotClick(3,e)}
+                    title="Slide 4" />
                 </div>
               </div>
             </div>

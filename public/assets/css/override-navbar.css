@@ -178,8 +178,9 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   #bannerSlider .slider-dots,
   .app .banner .slider-dots {
     position: absolute;
-    left: 24px;
-    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px; /* as close as possible above rounded edge */
     display: flex;
     gap: 12px;
     z-index: 2;
@@ -210,9 +211,9 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   .app .banner .slider-dots { display: none; }
 }
 
-/* When dots are placed inside the caption under Know More */
+/* Hide any caption-level dots on desktop; use global bottom dots only */
 @media (min-width: 992px) {
-  .app .banner .banner-caption .slider-dots { position: static; left: auto; bottom: auto; margin-top: 20px; display: flex; gap: 12px; }
+  .app .banner .banner-caption .slider-dots { display: none !important; }
 }
 
 /* =====================
