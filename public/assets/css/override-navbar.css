@@ -17,7 +17,8 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 @media (max-width: 991.98px) {
   #navbar-portal-root nav.navbar.nav-parent { display: none !important; }
   #navbar-portal-root aside#layout-menu { display: block !important; }
-  #navbar-portal-root .layout-overlay.layout-menu-toggle { display: block !important; }
+  /* Keep overlay hidden by default; it will be shown only if core adds .layout-menu-expanded */
+  #navbar-portal-root .layout-overlay.layout-menu-toggle { display: none !important; }
 }
 
 /* Visual tweaks */
@@ -332,6 +333,16 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =====================
+   Mobile: prevent invisible overlays from blocking taps
+   ===================== */
+@media (max-width: 991.98px) {
+  /* Awards/milestone block: remove negative offsets and keep stacking below footer */
+  .milestone-reached { top: 0 !important; }
+  #milestone { position: relative; z-index: 1; }
+  .property-footer-wrapper { position: relative; z-index: 2; }
 }
 
 /* =====================
