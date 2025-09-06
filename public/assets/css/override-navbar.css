@@ -178,9 +178,9 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   #bannerSlider .slider-dots,
   .app .banner .slider-dots {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 4px; /* as close as possible above rounded edge */
+    left: 24px;           /* left aligned under content */
+    bottom: 16px;         /* gap from banner bottom */
+    transform: none;
     display: flex;
     gap: 12px;
     z-index: 2;
@@ -214,6 +214,20 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 /* Hide any caption-level dots on desktop; use global bottom dots only */
 @media (min-width: 992px) {
   .app .banner .banner-caption .slider-dots { display: none !important; }
+}
+
+/* Banner radius: ensure slick structure clips to rounded corners */
+.app .banner .banner-slider {
+  border-radius: 10px;
+}
+.app .banner .banner-slider .slick-list {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.app .banner .banner-slider .slick-track,
+.app .banner .banner-slider .banner-slide,
+.app .banner .banner-slider .banner-slide img {
+  border-radius: 10px;
 }
 
 /* =====================
