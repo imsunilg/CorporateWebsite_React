@@ -137,9 +137,39 @@ const Home = () => {
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, [milestoneIdx]);
+
+  // FAQ accordion: provide JS toggle in case Bootstrap JS is not loaded
+  useEffect(() => {
+    const root = document.querySelector('.faq-section');
+    if (!root) return;
+    const onClick = (e) => {
+      const btn = e.target.closest('.accordion-button');
+      if (!btn || !root.contains(btn)) return;
+      e.preventDefault();
+      const targetSel = btn.getAttribute('data-bs-target') || `#${btn.getAttribute('aria-controls') || ''}`;
+      const panel = targetSel ? document.querySelector(targetSel) : null;
+      if (!panel) return;
+      const parentSel = panel.getAttribute('data-bs-parent');
+      if (parentSel) {
+        document.querySelectorAll(`${parentSel} .accordion-collapse.show`).forEach((open) => {
+          if (open !== panel) {
+            open.classList.remove('show');
+            const hdr = open.previousElementSibling && open.previousElementSibling.querySelector('.accordion-button');
+            if (hdr) hdr.classList.add('collapsed');
+            if (hdr) hdr.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      const isOpen = panel.classList.contains('show');
+      panel.classList.toggle('show', !isOpen);
+      btn.classList.toggle('collapsed', isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
   return(
- 
-      <div>
+  
     
         <div>
           <div className="content-container" style={{marginTop: '0px'}}>
@@ -1952,10 +1982,10 @@ const Home = () => {
               </div>
             </section>
             {/* section map ends  */}
+
             {/* Start FAQ */}
             {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" /> */}
             <link rel="stylesheet" href="../assets/css/faq-bootstrap.min.css" />
-            <style dangerouslySetInnerHTML={{__html: "\n    .faq-section .accordion-item {\n        border-radius: 10px !important;\n        border: 1px solid #D9D9D9;\n        margin-bottom: 0px;\n        display: flow-root;\n    }\n\n    .faq-section .accordion-button:not(.collapsed) {\n        background: #F9F9F9;\n        color: #1E1E1E;\n    }\n\n\n    .faq-section .accordion-flush .accordion-collapse {\n        background: #FFF;\n        margin-top: -17px;\n        line-height: 32px;\n        padding-top: 15px;\n    }\n\n    .faq-section .accordion-button {\n        background: #F5F5F5;\n        font-size: 14px;\n        font-weight: bold;\n    }\n\n    .accordion-button:focus {\n        border-color: none;\n        box-shadow: none;\n    }\n\n    .faq-section .accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed {\n        border-radius: 10px;\n        border: 1px solid #D9D9D9;\n    }\n\n    .faqlink{\n        text-decoration: underline !important;\n        font-weight: bold !important; \n    }\n\n\n    .faq-section .tbl-gry-bdr {\n        border-radius: 8px;\n        padding: 0px;\n        margin: 0px;\n        border: 1px solid #B2B2B2;\n        position: relative;\n        margin-left: 8px;\n    }\n\n    .faq-section table {\n        width: 100%;\n        border-collapse: collapse; /* Ensures that borders are collapsed into one */\n        /* border: 2px solid #D9D9D9; */\n        border-radius: 10px; /* Optional: Rounded corners for the table */\n        overflow: hidden; /* Ensures the rounded corners are visible */\n    }\n\n    .faq-section th, td {\n        text-align: left;\n        padding: 7px 10px 7px 40px;\n        border-right: 1px solid #B2B2B2; /* Borders between columns */\n    }\n\n    .faq-section td {\n        font-weight: normal;\n        font-size: 15px;\n        color: #6C6C6C;\n    }\n\n    /* Table Header Styling */\n    .faq-section th {\n        background-color: #EEEEEE;\n        color: #333;\n        font-weight: bold;\n    }\n\n    /* Row Alternate Colors */\n    .faq-section tr:nth-child(odd) {\n        background-color: white;\n    }\n\n    .faq-section tr:nth-child(even) {\n        background-color: #F5F6F6;\n    }\n\n\n\n    /* Remove the border for the last column */\n    .faq-section td:last-child, th:last-child {\n        border-right: none; /* No right border for the last column */\n    }\n\n\n    .m-b-20 {\n        margin-bottom: 20px;\n    }\n\n    .m-b-0f {\n        margin-bottom: 0px !important;\n    }\n\n    .faq-section .faq-text {\n        font-size: 44px;\n        font-weight: 700;\n        margin-bottom: 0px !important;\n        padding-top: 20px;\n        color: #212121;\n    }\n\n    .faq-section {\n        padding-left: 10%;\n        padding-right: 10%;\n    }\n\n    .circle-list-f li {\n        list-style: circle !important;\n        display: list-item;\n        padding-left: 10px;\n        margin-left: 20px;\n    }\n\n    .disc-list-f li {\n        list-style-type: disc;\n    }\n\n\n\n\n\n    @media (max-device-width: 767px) and (min-width: 320px) {\n        .faq-section\n\n    {\n        padding-left: 7%;\n        padding-right: 7%;\n    }\n\n    }\n\n\n    .b-text {\n        color: #282828;\n        font-weight: bold;\n    }\n\n    .line-h-30 {\n        line-height: 30px;\n    }\n\n    .faq-gray-txt {\n        color: #6C6C6C;\n    }\n\n        .faq-section, .faq-gray-txt ol li {\n            color: #6C6C6C !important;\n        }\n\n            .faq-section ol {\n                padding-left: 20px;\n            }\n\n            .faq-section ul li {\n                margin-left: 30px;\n                color: #6C6C6C !important;\n            }\n\n            .faq-section p {\n                color: #6C6C6C !important;\n            }\n\n" }} />
             <section className="faq-section" style={{border: 'none'}}>
               <h2 className="text-left faq-text">FAQs</h2>
               
@@ -2103,81 +2133,13 @@ const Home = () => {
                     </div>
                   </div>
                 </div> 
-               </section>
-              {/* <footer>
-                <div className="footer-main">
-                  <div className="container footer-content">
-                    <div className="d-flex flex-row footer-content-wrapper">
-                      <div className="footer-wrapper">
-                        <div className="footer-left-block">
-                          <h5>ICICI Lombard General Insurance Company Limited,</h5>
-                          <p>ICICI Lombard House, 414, Veer Savarkar Marg, Near Siddhi Vinayak Temple, Prabhadevi, Mumbai - 400025.</p>
-                          <p>Reg. No.115</p>
-                          <p className="email-para">
-                            Email: <span>cpcontactus@icicilombard.com</span>
-                          </p>
-                          <ul className="social-links">
-                            <li style={{marginRight: '6px'}}><a title="icicilombard facebook" className="fb-ico" href="https://www.facebook.com/ICICILombard" target="_blank" /></li>
-                            <li><a title="icicilombard linkedin" className="link-ico" href="https://www.linkedin.com/company/icici-lombard?trk=tyah" target="_blank" /></li>
-                            <li><a title="icicilombard twitter" className="twt-ico" href="https://twitter.com/ICICILombard" target="_blank" /></li>
-                            <li><a title="icicilombard youtube" className="yt-ico" href="https://www.youtube.com/user/ICICILombardLtd" target="_blank" /></li>
-                            <li><a title="icicilombard insta" className="inst-ico" href="https://www.instagram.com/icicilombardofficial" target="_blank" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="footer-links product-solution">
-                        <h5>Products</h5>
-                        <ul>
-                          <li><a href="/Portal/Standard_Fire_and_Special_perils_policy">Property</a></li>
-                          <li><a href="/Portal/Marine_Inland_Open_Declaration_Policy">Marine</a></li>
-                          <li><a href="/Portal/Comprehensive_General_Liability">Liability</a></li>
-                          <li><a href="/Portal/Contractors_All_Risk">Engineering</a></li>
-                          <li><a href="/Portal/Group_Health">Group Health </a></li>
-                          <li><a href="https://www.icicilombard.com/" target="_blank">Retail Products</a></li>
-                          <li><a href="https://sme.icicilombard.com/" target="_blank">SME Products</a></li>
-                          <li><a href="../assets/pdf/BASEPRODUCTS.pdf" target="_blank">Base Products</a></li>
-                        </ul>
-                      </div>
-                      <div className="footer-links explore">
-                        <h5>Explore</h5>
-                        <ul>
-                          <li><a href="/Portal/Home">Website Home</a></li>
-                          <li><a href="/Portal/Property_Loss_Prevention_exercise">Property services</a></li>
-                          <li><a href="/Portal/Vas_Solution">Marine Services</a></li>
-                          <li><a href="/Portal/risk_Health">Group Health Services</a></li>
-                          <li><a href="/Portal/risk_Engineering">Engineering services</a></li>
-                          <li><a href="/Portal/risk_liability">Liability Services</a></li>
-                        </ul>
-                      </div>
-                      <div className=" footer-links">
-                        <h5>Others</h5>
-                        <ul>
-                          <li><a href="https://www.icicilombard.com" target="_blank">Company Home</a></li>
-                          <li><a href="https://www.icicilombard.com/about-us" target="_blank">About </a></li>
-                          <li><a href="https://www.icicilombard.com/docs/default-source/default-document-library/1010586_26102022170853_hospital_empanelment_criteria.pdf" target="_blank">Hospital Empanelment Criteria</a></li>
-                          <li><a href="https://www.icicilombard.com/legal/privacy-policy" target="_blank">Privacy Policy</a></li>
-                          <li><a href="../assets/pdf/TAT.pdf" target="_blank">Retail Products TAT</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <hr />
-                    <div className="footer-dis-content">
-                      <p>
-                        ICICI Lombard General Insurance Company Ltd. is one of the leading private sector general insurance company in India offering insurance coverage for motor, health, travel, home, student travel and more. Policies can be purchased and renewed online as well. Immediate issuance of policy copy online.
-                      </p>
-                      <p>
-                        ICICI trade logo displayed above belongs to ICICI Bank and is used by ICICI Lombard GIC Ltd. under license and Lombard logo belongs to ICICI Lombard GIC Ltd. Insurance is the subject matter of the solicitation. The advertisement contains only an indication of cover offered. For more details on risk factors, terms, conditions and exclusions, please read the sales brochure carefully before concluding a sale. CIN: L67200MH2000PLC129408
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </footer> */}
+            </section> 
             </div>
           {/* footer ends */}
           {/* Script End  */}
           {/* Gaurav Script Start */}
           {/* Gaurav Script END */}
-        </div></div>
+        </div> 
     
 
        

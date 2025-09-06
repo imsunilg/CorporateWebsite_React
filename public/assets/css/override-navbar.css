@@ -287,6 +287,17 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 }
 
 /* =====================
+   Home: FAQs — avoid overlap with Need Help widget
+   ===================== */
+.faq-section {
+  position: relative;
+  padding-bottom: 140px !important; /* leave room so last item isn’t hidden */
+}
+@media (max-width: 991.98px) {
+  .faq-section { padding-bottom: 100px !important; }
+}
+
+/* =====================
    Home: Awards & Accolades (milestone) slider
    ===================== */
 #milestone .slider-container {
