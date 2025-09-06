@@ -8,6 +8,28 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+  // Provide a DOM-based tab toggler used by arrow links and dropdown items
+  useEffect(() => {
+    window.toggleActive = (idx) => {
+      try {
+        const paneIds = ['v-link-tab01','v-link-tab02','v-link-tab03','v-link-tab04','v-link-tab05'];
+        const linkIds = ['v-link-tab1','v-link-tab2','v-link-tab3','v-link-tab4','v-link-tab5'];
+        paneIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) { el.classList.remove('show','active'); }
+        });
+        linkIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) { el.classList.remove('active'); el.setAttribute('aria-selected','false'); }
+        });
+        const pane = document.getElementById(paneIds[idx]);
+        if (pane) { pane.classList.add('show','active'); }
+        const link = document.getElementById(linkIds[idx]);
+        if (link) { link.classList.add('active'); link.setAttribute('aria-selected','true'); if (typeof link.focus === 'function') link.focus(); }
+      } catch (_) { /* ignore */ }
+    };
+    return () => { try { delete window.toggleActive; } catch (_) {} };
+  }, []);
   const nextSlide = () => setActive((prev) => (prev + 1) % 4);
   const onSliderClick = (e) => {
     const anchor = e.target.closest && e.target.closest('a');
@@ -190,7 +212,7 @@ const Home = () => {
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Pharmaceuticals</h2>
                                       <a className="next-industry" style={{float: 'right'}} id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
                                         Empowering the future of healthcare, proudly serving
@@ -547,10 +569,10 @@ const Home = () => {
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Construction &amp; Infrastructure</h2>
                                       <a id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab01" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'right'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                     </div>
                                     <div id="pharma-accordion3">
@@ -875,10 +897,10 @@ const Home = () => {
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>IT/ITES</h2>
                                       <a id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'right'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
                                         900+ satisfied customers &amp; counting: Your IT Safety Assurance
@@ -1115,10 +1137,10 @@ const Home = () => {
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Banking &amp; Financial Services</h2>
                                       <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(4)} className="next-industry" style={{float: 'right'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
                                         Navigating risks and fostering growth in the BFSI sector with 250+ customers
@@ -1394,7 +1416,7 @@ const Home = () => {
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>FMCG &amp; Consumer Goods</h2>
                                       <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
-                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" />
+                                        <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       {/* <a href="#carousel__slide1" class="next-industry" style="float: right;">
                                   <img src="../assets/images/icons/next-arrow.svg" class="img-fluid" alt="Arrow">
