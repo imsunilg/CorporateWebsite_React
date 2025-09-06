@@ -333,12 +333,20 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   .map-wrapper .contact-us-wrapper {
     min-width: 0 !important; /* allow to fit within Bootstrap cols */
     width: 100% !important;
-    /* add side breathing room so cards don't touch */
-    margin: 26px 12px 0 12px !important;
+    margin: 26px 0 0 0 !important; /* remove extra side margins so both fit */
     align-items: center; /* vertically center contents */
   }
-  /* add a consistent gap between the two columns */
-  .map-wrapper .row { gap: 24px; }
+  .map-wrapper .row {
+    display: flex;
+    flex-wrap: nowrap !important; /* keep both tiles on one row */
+    column-gap: 24px; /* space between the two */
+  }
+  /* ensure columns are exactly half width */
+  .map-wrapper .row > .col-md-6,
+  .map-wrapper .row > .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 /* Keep CTA labels on one line and centered */

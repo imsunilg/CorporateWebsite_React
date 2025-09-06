@@ -1923,7 +1923,7 @@ const Home = () => {
             <section className="map-wrapper">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-5 col-sm-6 visit-us-wrapper">
+                  <div className="col-md-6 col-sm-6 visit-us-wrapper">
                     <div className="left">
                       <img src="../assets/images/location.svg" alt="location" />
                       <p className="para-1">
@@ -1935,7 +1935,7 @@ const Home = () => {
           <button onClick={() => window.open('https://corporate.icicilombard.com/assets/pdf/CSG-office-address-Locate-us.pdf', '_blank')} className="contact-us">Locate Us</button>
                     </div>
                   </div>
-                  <div className="col-md-5 col-sm-6 contact-us-wrapper">
+                  <div className="col-md-6 col-sm-6 contact-us-wrapper">
                     <div className="left">
                       <img src="../assets/images/Calling.svg" alt="calling" />
                       <p className="para-1">
