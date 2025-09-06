@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 const Home = () => {
   const [active, setActive] = useState(0);
@@ -83,6 +83,60 @@ const Home = () => {
     if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
     setActive(idx);
   };
+  // Awards & Accolades (milestone) slider - 4-up, step every 3s, center zoom
+  const milestoneRef = useRef(null);
+  const [milestoneIdx, setMilestoneIdx] = useState(0); // starting slide index
+  const getStep = (el) => {
+    const slide = el && el.querySelector('.slide');
+    let gap = 16;
+    try {
+      const cs = getComputedStyle(el);
+      const g = (cs.columnGap || cs.gap || '16px').toString();
+      const m = g.match(/([0-9.]+)px/);
+      if (m) gap = parseFloat(m[1]);
+    } catch (_) {}
+    const w = slide ? slide.getBoundingClientRect().width : (el ? el.clientWidth / 4 : 0);
+    return w + gap;
+  };
+  const scrollToIdx = (idx, smooth = true) => {
+    const el = milestoneRef.current; if (!el) return;
+    const step = getStep(el);
+    el.scrollTo({ left: idx * step, behavior: smooth ? 'smooth' : 'auto' });
+    // set active (zoom) on second visible slide
+    const slides = el.querySelectorAll(':scope > .slide');
+    const count = slides.length;
+    // For a 3-up layout, the centered (zoom) item is the 2nd visible => idx + 1
+    slides.forEach((s,i)=> s.classList.toggle('active', count ? (i === ((idx + 1) % count)) : false));
+  };
+  const milestoneNext = () => {
+    const el = milestoneRef.current; if (!el) return;
+    const count = el.querySelectorAll(':scope > .slide').length || 0;
+    setMilestoneIdx((i) => count ? (i + 1) % count : 0);
+  };
+  const milestonePrev = () => {
+    const el = milestoneRef.current; if (!el) return;
+    const count = el.querySelectorAll(':scope > .slide').length || 0;
+    setMilestoneIdx((i) => count ? (i - 1 + count) % count : 0);
+  };
+  useEffect(() => { scrollToIdx(milestoneIdx); }, [milestoneIdx]);
+  useEffect(() => {
+    // autoplay every 3s; pause on hover of container
+    let id = setInterval(milestoneNext, 3000);
+    const el = milestoneRef.current;
+    if (el) {
+      const stop = () => { clearInterval(id); id = 0; };
+      const start = () => { if (!id) id = setInterval(milestoneNext, 3000); };
+      el.addEventListener('mouseenter', stop);
+      el.addEventListener('mouseleave', start);
+      return () => { el.removeEventListener('mouseenter', stop); el.removeEventListener('mouseleave', start); clearInterval(id); };
+    }
+    return () => clearInterval(id);
+  }, []);
+  useEffect(() => {
+    const onResize = () => scrollToIdx(milestoneIdx, false);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [milestoneIdx]);
   return(
  
       <div>
@@ -1816,26 +1870,15 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="need-help-wrapper">
-                <div className="need-help-content">
-                  <img src="../assets/images/help-lady-img.svg" className="img-fluid" alt="assist-graphics" />
-                  <div className="d-flex flex-column para-content">
-                    <p>
-                      Need Help?
-                    </p>
-                    <p>
-                      Want to know more about our Products &amp; Risk Management Services?
-                    </p>
-                  </div>
-                 <Link to="ContactUs" className="contact-us">Contact Us</Link>
-                </div>
-              </div> */}
+          
             </section>
+            
+            <section id="milestone">
             <div id="milestone-wrapper" className="milestone-reached">
               <div className="milestone-content-wrapper">
                 <p> Awards &amp; Accolades</p>
                 <h2>Milestones we Reached </h2>
-                <div className="slider-container">
+                <div className="slider-container" ref={milestoneRef}>
                   <div className="slide">
                     <img src="../assets/images/highest-growth-GI.png" className="img-fluid" alt="Slide 1" />
                     <h3>Assocham 14th Global Insurance Awards in â€˜Highest Growth GIâ€™ Category</h3>
@@ -1865,8 +1908,16 @@ const Home = () => {
                     <h3>Navbharat BFSI Award for the Best General Insurance Company of the year</h3>
                   </div>
                 </div>
+                <div className="milestone-controls">
+                  <button type="button" aria-label="Previous" className="milestone-prev" onClick={milestonePrev}>
+                    <img src="../assets/images/icons/next-arrow.svg" alt="Prev" style={{transform: 'scaleX(-1)'}} />
+                  </button>
+                  <button type="button" aria-label="Next" className="milestone-next" onClick={milestoneNext}>
+                    <img src="../assets/images/icons/next-arrow.svg" alt="Next" />
+                  </button>
+                </div>
               </div>
-            </div>
+            </div></section>
             {/* section our case-studies ends */}
             {/* section map starts  */}
             <section className="map-wrapper">
@@ -2135,6 +2186,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 

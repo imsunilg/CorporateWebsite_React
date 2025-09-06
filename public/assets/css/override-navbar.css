@@ -285,3 +285,42 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
   padding-top: 32px !important; /* increase from default 20px */
   margin-top: 12px;              /* add breathing room from section edge */
 }
+
+/* =====================
+   Home: Awards & Accolades (milestone) slider
+   ===================== */
+#milestone .slider-container {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  gap: 16px;
+  /* show half slide peeking on both sides for 3-up */
+  padding-left: calc((100% - 32px) / 6);
+  padding-right: calc((100% - 32px) / 6);
+}
+#milestone .slider-container .slide {
+  flex: 0 0 calc((100% - 32px) / 3); /* 3 full slides visible with two 16px gaps */
+  padding: 12px 8px;
+  text-align: center;
+  overflow: visible; /* allow zoomed content to overflow without being cut */
+}
+#milestone .slider-container .slide img {
+  max-width: 100%;
+  height: auto;
+}
+#milestone .slider-container .slide { transition: transform 220ms ease; will-change: transform; }
+#milestone .slider-container .slide.active { transform: scale(1.2); z-index: 2; }
+#milestone .milestone-controls {
+  display: flex;
+  justify-content: flex-end; /* align controls to the right */
+  gap: 16px;
+  margin-top: 10px;
+  padding-right: 16px;
+}
+#milestone .milestone-controls .milestone-prev,
+#milestone .milestone-controls .milestone-next {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
