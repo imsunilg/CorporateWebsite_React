@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const Home = () => {
   const [active, setActive] = useState(0);
@@ -78,8 +78,8 @@ const Home = () => {
                   <img style={{filter: 'brightness(95%)'}} src="../assets/images/silder-img-3.jpg" className="d-none d-md-block img-fluid" alt="Slide 1" height="400px;" />
                   <img src="../assets/images/silder-img-mob-3.png" className="d-block d-md-none w-100" alt="Slide 1" />
                   <div className="banner-caption">
-                    <h5>Unlocking new opportunities – ICICI Lombard IIO</h5>
-                    <p>India’s first Financial Services SEZ dedicated to development and export of financial services in and from India</p>
+                    <h5>Unlocking new opportunities â€“ ICICI Lombard IIO</h5>
+                    <p>Indiaâ€™s first Financial Services SEZ dedicated to development and export of financial services in and from India</p>
                     <Link to="/ifsc-office" className="btn know-more-btn lastBtn">Know More</Link>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const Home = () => {
                   <div className="col-12">
                     <div className="counter-figure-wrapper">
                       <div className="counter-content-wrapper">
-                        <h2 className="counter-numbers" data-number={2000}>₹121.8B</h2>
+                        <h2 className="counter-numbers" data-number={2000}>â‚¹121.8B</h2>
                         <p>Gross written Premium</p>
                         <img src="../assets/images/icons/lines.svg" className="img-fluid lines-graphics" alt="lines" />
                       </div>
@@ -194,11 +194,11 @@ const Home = () => {
                         </button>
                         <div className="nav flex-column nav-pills me-3 nav-shadow p-l-30 bg-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                           <div className="dropdown-menu pl-3 text-left" style={{ marginLeft: '16px' }}>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab1" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)}>Pharmaceuticals</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>Construction &amp; Infrastructure</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)}>IT/ITES</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(3)}>Banking &amp; Financial Services</a>
-                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab5" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(4)}>FMCG &amp; Consumer Goods</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab1" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(0); }}>Pharmaceuticals</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(1); }}>Construction &amp; Infrastructure</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(2); }}>IT/ITES</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(3); }}>Banking &amp; Financial Services</a>
+                            <a className="dropdown-item ICICIMenu mb-2 nav-link" id="v-link-tab5" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(4); }}>FMCG &amp; Consumer Goods</a>
                           </div>
                           <div className="tab-content" id="v-pills-tabContent">
                             <div className="tab-pane fade show active me-4" id="v-link-tab01" role="tabpanel" aria-labelledby="v-link-tab1">
@@ -211,7 +211,7 @@ const Home = () => {
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Pharmaceuticals</h2>
-                                      <a className="next-industry" style={{float: 'right'}} id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)}>
+                                      <a className="next-industry" style={{float: 'right'}} id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(1); }}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
@@ -508,7 +508,7 @@ const Home = () => {
                                             <div className="industry-accordion-body p-t-20">
                                               {/* <h3 class="p-t-10">Case Study 1</h3> */}
                                               <p>
-                                                The insured company is a global pharmaceutical conglomerate. Operating in multiple countries with a workforce of ~ 15,000 individuals from diverse nationalities, this case study highlights insurer’s efforts to combat insured company’s phishing threats with the aid of a dedicated yearlong simulation exercise.
+                                                The insured company is a global pharmaceutical conglomerate. Operating in multiple countries with a workforce of ~ 15,000 individuals from diverse nationalities, this case study highlights insurerâ€™s efforts to combat insured companyâ€™s phishing threats with the aid of a dedicated yearlong simulation exercise.
                                               </p>
                                             </div>
                                           </div>
@@ -531,13 +531,13 @@ const Home = () => {
                                             <div className="industry-accordion-body">
                                               <h3>ACG Group</h3>
                                               <p className="text-italic text-black">
-                                                “ICICI Lombard has been our insurance
+                                                â€œICICI Lombard has been our insurance
                                                 partner for more than a decade. The
                                                 company has a diverse portfolio of
                                                 non-health services, and have
                                                 successfully helped us sail through the
                                                 risk hurdles with outstanding solutions
-                                                in Property and Marine segment.”
+                                                in Property and Marine segment.â€
                                               </p>
                                               <div className="testimonial-bio-wrapper m-t-20m">
                                                 <div className="testimonial-name">
@@ -545,7 +545,7 @@ const Home = () => {
                                                     Mr. Neeraj Bhavsar
                                                   </p>
                                                   <p className="title-chief mt-0">
-                                                    Head – Finance Insurance
+                                                    Head â€“ Finance Insurance
                                                   </p>
                                                 </div>
                                               </div>
@@ -568,10 +568,10 @@ const Home = () => {
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Construction &amp; Infrastructure</h2>
-                                      <a id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab01" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(0)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab1" data-bs-toggle="pill" data-bs-target="#v-link-tab01" href="#v-link-tab01" type="button" role="tab" aria-controls="v-link-tab01" aria-selected="true" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(0); }} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
-                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(2); }} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                     </div>
@@ -896,10 +896,10 @@ const Home = () => {
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>IT/ITES</h2>
-                                      <a id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(1)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab2" data-bs-toggle="pill" data-bs-target="#v-link-tab02" href="#v-link-tab02" type="button" role="tab" aria-controls="v-link-tab02" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(1); }} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(3); }} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
@@ -1136,10 +1136,10 @@ const Home = () => {
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>Banking &amp; Financial Services</h2>
-                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(2)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab3" data-bs-toggle="pill" data-bs-target="#v-link-tab03" href="#v-link-tab03" type="button" role="tab" aria-controls="v-link-tab03" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(2); }} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={() => window.toggleActive && window.toggleActive(4)} className="next-industry" style={{float: 'right'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab05" href="#v-link-tab05" type="button" role="tab" aria-controls="v-link-tab05" aria-selected="false" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(4); }} className="next-industry" style={{float: 'right'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       <p>
@@ -1175,7 +1175,7 @@ const Home = () => {
                                                     forward
                                                   </h3>
                                                   <p className="m-t-0f">
-                                                    The future state of the Indian Banking lies in the modernisation of the core banking system. Introduction of new, better and agile technologies is carving out new paths of growth and optimization. The desire for cashless transactions in the economy has led to the rise of digital-first banks or “Neo banks” with almost all major banks now providing some form of mobile banking. Digital payments across the country registered a growth of nearly 29 per cent in a year. Fintech firms are now partnering with traditional insurers to help automate operations and increase coverage. The scope of services offered includes insurance comparison platforms, claims management, sales platform, underwriting risk management, insurance infrastructure API, insurance product configurator, and policy admin system.
+                                                    The future state of the Indian Banking lies in the modernisation of the core banking system. Introduction of new, better and agile technologies is carving out new paths of growth and optimization. The desire for cashless transactions in the economy has led to the rise of digital-first banks or â€œNeo banksâ€ with almost all major banks now providing some form of mobile banking. Digital payments across the country registered a growth of nearly 29 per cent in a year. Fintech firms are now partnering with traditional insurers to help automate operations and increase coverage. The scope of services offered includes insurance comparison platforms, claims management, sales platform, underwriting risk management, insurance infrastructure API, insurance product configurator, and policy admin system.
                                                   </p>
                                                   <br /><br />
                                                 </div>
@@ -1415,7 +1415,7 @@ const Home = () => {
                                     <div className="industry-info-head">
                                       {/*<span class="sub-heading">Industry</span>*/}
                                       <h2>FMCG &amp; Consumer Goods</h2>
-                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="true" onClick={() => window.toggleActive && window.toggleActive(3)} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
+                                      <a id="v-link-tab4" data-bs-toggle="pill" data-bs-target="#v-link-tab04" href="#v-link-tab04" type="button" role="tab" aria-controls="v-link-tab04" aria-selected="true" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.toggleActive && window.toggleActive(3); }} className="next-industry" style={{float: 'left', position: 'absolute', WebkitTransform: 'scaleX(-1)', transform: 'scaleX(-1)', display: 'block', right: '50px'}}>
                                         <img src="../assets/images/icons/next-arrow.svg" className="img-fluid" alt="Arrow" style={{cursor: 'pointer'}} onClick={(e) => { const a = e.currentTarget.closest('a'); if (a) a.click(); }} />
                                       </a>
                                       {/* <a href="#carousel__slide1" class="next-industry" style="float: right;">
@@ -1797,7 +1797,7 @@ const Home = () => {
                 <div className="slider-container">
                   <div className="slide">
                     <img src="../assets/images/highest-growth-GI.png" className="img-fluid" alt="Slide 1" />
-                    <h3>Assocham 14th Global Insurance Awards in ‘Highest Growth GI’ Category</h3>
+                    <h3>Assocham 14th Global Insurance Awards in â€˜Highest Growth GIâ€™ Category</h3>
                   </div>
                   <div className="slide">
                     <img src="../assets/images/dun-bradstreet-BFSI.png" className="img-fluid" alt="Slide 2" />
@@ -1878,7 +1878,7 @@ const Home = () => {
                       <div className="accordion-body">
                         <div className="row">
                           <div className="col-md-12 m-b-20">
-                            <span className="b-text">Here’s how long it typically takes to complete various insurance-related services:</span>
+                            <span className="b-text">Hereâ€™s how long it typically takes to complete various insurance-related services:</span>
                           </div>
                         </div>
                         <div className="tbl-gry-bdr">
@@ -1912,7 +1912,7 @@ const Home = () => {
                               </tr>
                               <tr>
                                 <td>Survey report submission</td>
-                                <td>Within 15 days of the surveyor’s appointment</td>
+                                <td>Within 15 days of the surveyorâ€™s appointment</td>
                               </tr>
                               <tr>
                                 <td>Claim approval</td>
@@ -1948,7 +1948,7 @@ const Home = () => {
                                   <li>Visit our website and use the <a href="https://www.icicilombard.com/claim-tracker" className="website">Claim Tracker</a></li>
                                 </ul>
                               </li>
-                              <li>2. Submit the required documents and claim form. Once your claim is registered, you’ll receive a reference number for tracking and communication.</li>
+                              <li>2. Submit the required documents and claim form. Once your claim is registered, youâ€™ll receive a reference number for tracking and communication.</li>
                               <li>3. For Health and Motor claims, download the IL Take Care App.</li>
                             </ol>
                           </div>
@@ -1992,13 +1992,13 @@ const Home = () => {
                       <div className="accordion-body">
                         <div className="row faq-gray-txt">
                           <div className="col-md-12 m-b-20">
-                            <p>If you have a grievance or query, here’s how you can seek help:</p>
+                            <p>If you have a grievance or query, hereâ€™s how you can seek help:</p>
                             <ul className="disc-list-f">
                               <li><strong>Call us</strong>: Toll-free number 1800 2666</li>
-                              <li><strong>Visit our website</strong>: Go to the “Grievance Redressal” section in the Customer Support area at&nbsp;<a href="https://www.icicilombard.com/" className="faqlink">ICICI&nbsp;Lombard</a>.</li>
+                              <li><strong>Visit our website</strong>: Go to the â€œGrievance Redressalâ€ section in the Customer Support area at&nbsp;<a href="https://www.icicilombard.com/" className="faqlink">ICICI&nbsp;Lombard</a>.</li>
                               <li><strong>Visit a branch</strong>: Contact the nearest ICICI Lombard branch office.</li>
                             </ul>
-                            <p>If you’re unsatisfied with the resolution:</p>
+                            <p>If youâ€™re unsatisfied with the resolution:</p>
                             <ul className="disc-list-f">
                               <li>You can escalate your concern to the&nbsp;<strong>IRDAI</strong>&nbsp;through the&nbsp;<a href="https://bimabharosa.irdai.gov.in/" className="faqlink">Bima&nbsp;Bharosa&nbsp;Portal</a>&nbsp;or call the&nbsp;<strong>IRDAI Grievance Call Centre</strong>&nbsp;at 1800 4254 732 / 155255.</li>
                               <li>
@@ -2094,3 +2094,7 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
