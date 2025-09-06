@@ -8,6 +8,47 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+  // Initialize Swiper for overview carousels and keep it in sync on tab changes
+  useEffect(() => {
+    let disposed = false;
+    const ensureSwiper = () => new Promise((resolve, reject) => {
+      if (window.Swiper) return resolve();
+      const s = document.createElement('script');
+      s.src = '/assets/js/swiper-bundle.min.js';
+      s.async = true;
+      s.onload = () => resolve();
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+    const init = () => {
+      if (disposed) return;
+      document.querySelectorAll('.mySwiper').forEach((el) => {
+        try {
+          if (el._swiper && typeof el._swiper.destroy === 'function') {
+            el._swiper.destroy(true, true);
+            el._swiper = null;
+          }
+          const pag = el.querySelector('.swiper-pagination');
+          const inst = new window.Swiper(el, {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            autoHeight: true,
+            observer: true,
+            observeParents: true,
+            pagination: pag ? { el: pag, clickable: true } : undefined,
+          });
+          el._swiper = inst;
+        } catch (_) { /* ignore */ }
+      });
+    };
+    ensureSwiper().then(init).catch(() => {});
+    const onTabChanged = () => setTimeout(init, 0);
+    document.addEventListener('il-tab-change', onTabChanged);
+    return () => {
+      disposed = true;
+      document.removeEventListener('il-tab-change', onTabChanged);
+    };
+  }, []);
   // Provide a DOM-based tab toggler used by arrow links and dropdown items
   useEffect(() => {
     window.toggleActive = (idx) => {
@@ -26,6 +67,8 @@ const Home = () => {
         if (pane) { pane.classList.add('show','active'); }
         const link = document.getElementById(linkIds[idx]);
         if (link) { link.classList.add('active'); link.setAttribute('aria-selected','true'); if (typeof link.focus === 'function') link.focus(); }
+        // notify listeners that a tab change occurred (re-init sliders)
+        try { document.dispatchEvent(new CustomEvent('il-tab-change')); } catch (_) {}
       } catch (_) { /* ignore */ }
     };
     return () => { try { delete window.toggleActive; } catch (_) {} };
@@ -234,8 +277,7 @@ const Home = () => {
                                               <div className="testi-content swiper-wrapper">
                                                 <div className="slide swiper-slide">
                                                   <h3 className="text-left w-100">
-                                                    Growth
-                                                    Landscape and Industry Scope
+                                                    Growth Landscape and Industry Scope
                                                   </h3>
                                                   <p className="m-t-0f">
                                                     The pharmaceutical
@@ -272,8 +314,7 @@ const Home = () => {
                                                 </div>
                                                 <div className="slide swiper-slide">
                                                   <h3 className="text-left w-100">
-                                                    Way
-                                                    forward for the industry
+                                                    Way forward for the industry
                                                   </h3>
                                                   <p className="m-t-0f">
                                                     The Indian
@@ -2094,7 +2135,6 @@ const Home = () => {
 };
 
 export default Home;
-
 
 
 

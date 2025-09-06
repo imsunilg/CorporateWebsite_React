@@ -244,6 +244,13 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 .section-leader .section-leader-content h2,
 .section-leader .section-leader-content p { color: #fff; }
 
+/* =====================
+   Overview slider (text alignment & bullets)
+   ===================== */
+.industry-info .mySwiper .slide h3,
+.industry-info .mySwiper .slide p { text-align: left !important; }
+.industry-info .mySwiper .swiper-pagination { text-align: left; padding-top: 8px; }
+
 /* Banner radius: ensure slick structure clips to rounded corners */
 .app .banner .banner-slider {
   border-radius: 10px;
