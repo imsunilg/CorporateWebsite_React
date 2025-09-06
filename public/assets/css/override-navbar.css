@@ -171,6 +171,49 @@ nav.navbar.nav-parent, header .nav-parent, aside#layout-menu, .layout-overlay.la
 .app .banner .banner-slider { position: relative; }
 .app .banner .banner-slider .banner-slide { display: none; }
 .app .banner .banner-slider .banner-slide.is-active { display: block; }
+/* Slider line controls (desktop) */
+@media (min-width: 992px) {
+  /* Position dots if placed inside slider or heading */
+  .app .banner { position: relative; }
+  #bannerSlider .slider-dots,
+  .app .banner .slider-dots {
+    position: absolute;
+    left: 24px;
+    bottom: 16px;
+    display: flex;
+    gap: 12px;
+    z-index: 2;
+  }
+  #bannerSlider .slider-dot,
+  .app .banner .slider-dot {
+    width: 60px; /* 50% of previous 120px */
+    height: 4px;
+    border: none;
+    padding: 0;
+    border-radius: 2px;
+    background: #dcdcdc;
+    cursor: pointer;
+    transition: background 120ms ease-in-out;
+  }
+  #bannerSlider .slider-dot:hover,
+  #bannerSlider .slider-dot.active,
+  #bannerSlider .slider-dot[aria-selected="true"],
+  .app .banner .slider-dot:hover,
+  .app .banner .slider-dot.active,
+  .app .banner .slider-dot[aria-selected="true"] {
+    background: #ec6625;
+  }
+}
+/* Mobile: hide slider dots for tighter layout */
+@media (max-width: 991.98px) {
+  #bannerSlider .slider-dots { display: none; }
+  .app .banner .slider-dots { display: none; }
+}
+
+/* When dots are placed inside the caption under Know More */
+@media (min-width: 992px) {
+  .app .banner .banner-caption .slider-dots { position: static; left: auto; bottom: auto; margin-top: 20px; display: flex; gap: 12px; }
+}
 
 /* =====================
    User area (after login)
